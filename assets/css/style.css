@@ -1,0 +1,41 @@
+/*------------------navbar----------------*/
+.navbar {
+  position: absolute;
+  width: 100%;
+  padding-top: 20px;
+  background-color: transparent !important;
+}
+
+.navbar-brand {
+  color: white !important;
+}
+
+.navbar-collapse {
+  float: right !important;
+}
+
+.navbar-collapse ul li a {
+  color: white !important;
+}
+
+/*------------------landing page body background----------------*/
+
+.body-background {
+  width: 100%;
+  height: auto;
+}
+
+.body-background img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/*------------------landing page body content----------------*/
+
+.left {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f0f1f2;
+}
