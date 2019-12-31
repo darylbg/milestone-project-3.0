@@ -9,42 +9,206 @@
   <title>campUSA</title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
+  <script type="text/javascript" src="assets/js/main.js" defer></script>
+  <script type="text/javascript" src="assets/js/initial.jquery" defer></script>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">campUSA</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">register your place</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">help</a>
-          </li>
-        </ul>
-  </header>
-
+<!---BACK TO TOP BUTTON--->
+  <a class="btn-floating btn-large waves-effect waves-light red" onclick="topFunction()" id="myBtn" title="Go to top"><i class="material-icons">arrow_upward</i></a>
+<!---NAVBAR--->
+  <div class="navbar">
+    <nav class="nav-wrapper transparent">
+      <a href="#" class="brand-logo">CampUSA</a>
+      <a href="#" class="sidenav-trigger" data-target="mobile-links">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down nav-links">
+        <li><a href="" class="hvr-underline-from-left">Home</a></li>
+        <li><a href="" class="hvr-underline-from-left">About</a></li>
+        <li><a href="" class="hvr-underline-from-left">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <ul class="sidenav" id="mobile-links">
+    <li><a href="">Home</a></li>
+    <li><a href="">About</a></li>
+    <li><a href="">Contact</a></li>
+  </ul>
+  <!---BODY BACKGROUND--->
   <div class="body-background">
     <img class="body-background-img" src="https://images.wallpaperscraft.com/image/tent_camping_mountains_sunset_110237_1920x1080.jpg" alt="">
     <div class="left">
-      hello
+      <p>lor20</p>
     </div>
   </div>
+<!---COUNTRY REGION LINKS--->
+  <section class="camp-regions">
+    <div class="row region-title">
+      <div class="col-md-12 region-title-text">Explore Regions</div>
+    </div>
+    <div class="row region-links">
+      <div class="col-6 col-xl-3 link">
+        <div class="link-card">
+          <a href="#west-coast-cards">
+            <div class="link-img">
+              <img src="https://www.planetware.com/photos-large/USCA/california-joshua-tree-national-park-scenery.jpg" alt="">
+            </div>
+            <div class="link-text">west coast</div>
+          </a>
+        </div>
+      </div>
+      <div class="col-6 col-xl-3 link">
+        <div class="link-card">
+          <a href="#">
+            <div class="link-img">
+              <img src="https://livability.com/sites/default/files/GainesvilleFL.jpg" alt="">
+            </div>
+            <div class="link-text">south</div>
+          </a>
+        </div>
+      </div>
+      <div class="col-6 col-xl-3 link">
+        <div class="link-card">
+          <a href="#">
+            <div class="link-img">
+              <img src="https://imgc.allpostersimages.com/img/print/u-g-PZLFHN0.jpg?w=550&h=550&p=0" alt="">
+            </div>
+            <div class="link-text">midwest</div>
+          </a>
+        </div>
+      </div>
+      <div class="col-6 col-xl-3 link">
+        <div class="link-card">
+          <a href="#">
+            <div class="link-img">
+              <img src="https://odis.homeaway.com/odis/destination/ff912fa1-afd9-43d5-9033-2a20a6281d4b.carousel-xs.jpg" alt="">
+            </div>
+            <div class="link-text">northeast</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+<!---FEATURED CAMPING GETAWAY--->
+  <section class="feature-getaway">
+    <div class="row feature-title">
+      <div class="col-md-12 feature-title-text">Featured Getaway</div>
+    </div>
+    <div class="row feature">
+      <div class="col-md-12 feature-img z-depth-5">
+        <div class="feature-info left z-depth-5">
+          <p>scenic northeastern campsite near historic town</p>
+          <a class="waves-effect waves-light btn hvr-sweep-to-right">take me there</a>
+        </div>
+      </div>
+    </div>
+  </section>
+<!---WEST COAST LOCATION CARDS--->
+  <section class="west-coast-cards" id="west-coast-cards">
+    <div class="row card-row">
+      <div class="d-none d-md-block col-sm-4 col-md-3">
+        <div class="card z-depth-3">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="https://handluggageonly.co.uk/wp-content/uploads/2015/10/Muir-Woods-California-e1485995335339.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+      </div>
+      <div class="d-none d-sm-block col-sm-4 col-md-3">
+        <div class="card z-depth-3">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="http://pronetowanderfriends.files.wordpress.com/2014/02/angels-landing.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card z-depth-3">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="https://www.usnews.com/dims4/USNEWS/9b6d32b/2147483647/thumbnail/640x420/quality/85/?url=http%3A%2F%2Fcom-usnews-beam-media.s3.amazonaws.com%2F8a%2Fda%2Fa76529c343fdba6a222005c5bd8c%2F170830-hoodriveroregon-stock.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card z-depth-3">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="https://www.vsattui.com/wp-content/uploads/V-Sattui-eaf919d05056a36_eaf91e08-5056-a36a-082c067064e9d45f.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+
+<!---FOOTER--->
+  <footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Footer Content</h5>
+        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2014 Copyright Text
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
 </body>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/js/main.js" defer></script>
 
 </html>
