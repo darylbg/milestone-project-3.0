@@ -44,6 +44,10 @@ body {
   padding: 0;
 }
 
+.tasks-navbar {
+  position: relative;
+}
+
 .nav-wrapper {
   box-shadow: none;
 }
