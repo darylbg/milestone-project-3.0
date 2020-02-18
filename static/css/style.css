@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css?family=Cantarell|Roboto&display=swap');
+
+body {
+  overflow-x: hidden;
+}
+
+.container-fluid {
+  margin: 0;
+  border-radius: 0;
+}
+
+/*------------------landing page body background----------------*/
+
+.body-background {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.body-background img {
+  width: auto;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-size: 100vh;
+}
+
+/*------------------back to top button----------------*/
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 100;
+}
+
+/*------------------navbar----------------*/
+
+.navbar {
+  position: absolute;
+  background: transparent;
+  width: 100%;
+  padding: 0;
+}
+
+.tasks-navbar {
+  position: relative;
+}
+
+.nav-wrapper {
+  box-shadow: none;
+}
+
+.nav-wrapper a:hover {
+  text-decoration: none;
+}
+
+.sidenav-trigger i:hover {
+  color: white;
+}
+
+.brand-logo {
+  padding-left: 25px !important;
+  font-family: 'Cantarell', sans-serif;
+}
+
+@media (max-width: 991px) {
+  .brand-logo {
+    padding-left: 0px !important;
+  }
+}
+
+.nav-links li {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.hvr-underline-from-left::before{
+  background-color: white;
+  height: 2px;
+  transition: 0.1s !important;
+}
+
+.nav-links li a {
+  font-size: 1.2em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+}
+
+.nav-links li a:hover {
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+}
+
+/*------------------landing page body content----------------*/
+
+.body-background .left {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  color: #f0f1f2;
+}
+
+@media (max-width: 990px) {
+  .left {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f0f1f2;
+  }
+}
+
+/*------------------ holiday links content----------------*/
+
+.camp-regions {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media (min-width: 1400px) {
+  .camp-regions {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+.region-title {
+  margin-top: 100px;
+}
+
+.region-title-text {
+  font-size: 2.5em;
+  font-family: 'Roboto', sans-serif;
+}
+
+.link {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.region-links {
+  max-height: 250px;
+}
+
+.link-card {
+  height: 70px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px;
+  border-radius: 5px;
+}
+
+@media (max-width:600px) {
+  .link-card {
+    height: 50px;
+  }
+}
+
+.link-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+}
+
+.link-card a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+.link-card a .link-img {
+  height: 100%;
+  width: 30%;
+  overflow: hidden;
+  float: left;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.link-card a .link-img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.link-card a .link-text {
+  height: 100%;
+  width: 70%;
+  float: right;
+  text-align: center;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  padding-top: 15px;
+}
+
+@media (max-width: 600px) {
+  .link-card a .link-text {
+    font-size: 18px;
+    padding-top: 11px;
+  }
+}
+
+/*------------------Featured holiday content----------------*/
+
+.feature-getaway {
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+@media (min-width: 1400px) {
+  .feature-getaway {
+    margin-left: 35px;
+    margin-right: 35px;
+  }
+}
+
+.feature-title {
+  margin-top: 100px;
+}
+
+.feature-title-text {
+  font-size: 2.5em;
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+}
+
+.feature-img {
+  height: 350px;
+  overflow: hidden;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://www.discovernewengland.org/sites/default/files/styles/1360x370/public/banner-images/river-in-north-conway-fall-foliage.jpg?itok=eSQmdgm_");
+}
+
+@media (max-width: 1400px) {
+  .feature-img {
+    height: 250px
+  }
+}
+
+@media (max-width: 1100px) {
+  .feature-img {
+    height: 200px;
+  }
+}
+
+.feature-img .left {
+  color: white;
+  font-size: 22px;
+  font-family: 'Roboto', sans-serif;
+  max-width: 30%;
+  height: 100%;
+  margin-left: 3%;
+}
+
+@media (min-width: 1300px){
+  .feature-img .left {
+      position: absolute;
+      top: 50%;
+      left: 10% !important;
+      transform: translate(-50%, -50%);
+      font-size: 25px;
+      max-width: 20%;
+    }
+}
+
+@media (max-width: 990px){
+  .feature-img .left {
+      position: absolute;
+      top: 50%;
+      left: 17% !important;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      max-width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+  .feature-img .left {
+      position: absolute;
+      top: 50%;
+      left: 25% !important;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      max-width: 50%;
+    }
+}
+
+@media (max-width: 400px) {
+  .feature-img .left {
+      position: absolute;
+      top: 50%;
+      left: 35% !important;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      max-width: 100%;
+    }
+}
+
+.feature-img .left p {
+  padding-top: 70px;
+}
+
+@media (max-width: 1400px) {
+  .feature-img .left p {
+    padding-top: 25px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .feature-img .left p {
+    padding-top: 20px;
+  }
+}
+
+.feature-img .left a {
+  margin-top: 50px;
+}
+
+@media (max-width: 1400px) {
+  .feature-img .left a {
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .feature-img .left a {
+    margin-top: 15px;
+  }
+}
+
+.hvr-sweep-to-right::before {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/*--------------west coast cards-----------*/
+
+.west-coast-cards {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+@media (min-width: 1400px) {
+  .west-coast-cards {
+    margin-left: 35px;
+    margin-right: 35px;
+  }
+}
+
+.card {
+  max-height: 400px;
+  height: 100%;
+}
+
+.card-image {
+  height: 70%;
+}
+
+.card-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.card a {
+  text-decoration: none;
+  color: #f44336;
+  font-size: 15px;
+}
+
+
+
+/*--------------register template tasks.html-----------*/
+
+.card-location
+.card-state
+.card-facilities
+.card-arrive-by
+.card-leave-by
+
+ul:not(.browser-default)>li {
+  width: 300px !important;
+}
+
+
+.register-body {
+  background-color: red;
+}
+
+.edit-card {
+  margin-left: 25px;
+  margin-right: 25px;
+}
