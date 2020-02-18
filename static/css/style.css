@@ -379,12 +379,6 @@ body {
 
 /*--------------register template tasks.html-----------*/
 
-.card-location
-.card-state
-.card-facilities
-.card-arrive-by
-.card-leave-by
-
 ul:not(.browser-default)>li {
   width: 300px !important;
 }
