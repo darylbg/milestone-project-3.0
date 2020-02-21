@@ -20,6 +20,12 @@
           <input id="camp_img" name="camp_img" class="file-path validate" type="text" placeholder="Upload cover image">
         </div>
       </div>
+
+
+<input name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="image_id"
+   data-form-data="[upload-preset-and-other-upload-options-as-html-escaped-JSON-data]"></input>
+
+
       <div class="input-field col-12">
         <i class="material-icons prefix">flag</i>
         <select id="camp_state" name="camp_state" class="validate">
@@ -97,13 +103,12 @@
         <textarea id="camp_description" name="camp_description" class="materialize-textarea"></textarea>
         <label for="camp_description">Camp description</label>
       </div>
-      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-        <i class="material-icons right">send</i>
+      <button class="btn waves-effect waves-light green" type="submit" name="action">Add campsite
+        <i class="material-icons right">beenhere</i>
       </button>
 
     </div>
   </form>
 </div>
-
 
 {% endblock %}

@@ -4,26 +4,26 @@
 <h3>edit campsite</h3>
 
 <div class="row">
-  <form action="{{ url_for('insert_task') }}" method="POST" class="col s12">
+  <form action="{{ url_for('update_task', task_id=task._id) }}" method="POST" class="col s12">
     <div class="row">
       <div class="input-field col-12">
         <i class="material-icons prefix">terrain</i>
-        <input id="camp_title" name="camp_title" type="text" class="validate">
+        <input id="camp_title" name="camp_title" type="text" class="validate" value="{{task.camp_title}}">
         <label for="camp_title">Camp title</label>
       </div>
       <div class="file-field input-field col-12">
         <div class="btn">
           <span>File</span>
-          <input id="camp_img" name="camp_img" type="file" multiple>
+          <input id="camp_img" name="camp_img" type="file" value="{{task.camp_img}}">
         </div>
         <div class="file-path-wrapper">
-          <input id="camp_img" name="camp_img" class="file-path validate" type="text" placeholder="Upload cover image">
+          <input id="camp_img" name="camp_img" class="file-path validate" type="text" placeholder="Upload cover image" value="{{task.camp_img}}">
         </div>
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">flag</i>
         <select id="camp_state" name="camp_state" class="validate">
-          <option value="" disabled selected>Select state</option>
+          <option value="" disabled selected>{{task.camp_state}}</option>
           <option value="Alabama">Alabama</option>
           <option value="Alaska">Alaska</option>
           <option value="Arizona">Arizona</option>
@@ -75,29 +75,29 @@
           <option value="Wisconsin">Wisconsin</option>
           <option value="Wyoming">Wyoming</option>
         </select>
-        <label for="camp_state"></label>
+        <label for="camp_state">Camp state</label>
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">location_on</i>
-        <input id="camp_address" name="camp_address" type="text" class="validate">
+        <input id="camp_address" name="camp_address" type="text" class="validate" value="{{task.camp_address}}">
         <label for="camp_address">Full address</label>
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">event_available</i>
         <select id="camp_availability" name="camp_availability" class="validate">
-          <option value="" disabled selected>Select availability</option>
+          <option value="" disabled selected>{{task.camp_availability}}</option>
           <option value="Currently available">Currently available</option>
           <option value="Available soon enquire futher">Available soon enquire futher</option>
           <option value="Currently unavailable">Currently unavailable</option>
         </select>
-        <label for="camp_availability"></label>
+        <label for="camp_availability">Select availability</label>
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">subject</i>
-        <textarea id="camp_description" name="camp_description" class="materialize-textarea"></textarea>
+        <textarea id="camp_description" name="camp_description" class="materialize-textarea" value="">{{task.camp_description}}</textarea>
         <label for="camp_description">Camp description</label>
       </div>
-      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+      <button class="btn waves-effect waves-light" type="submit" name="action">Edit camp
         <i class="material-icons right">send</i>
       </button>
 

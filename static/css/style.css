@@ -52,6 +52,10 @@ body {
   box-shadow: none;
 }
 
+.nav-wrapper a {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
 .nav-wrapper a:hover {
   text-decoration: none;
 }
@@ -62,7 +66,8 @@ body {
 
 .brand-logo {
   padding-left: 25px !important;
-  font-family: 'Cantarell', sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
+  font-size: 1.3rem !important;
 }
 
 @media (max-width: 991px) {
@@ -78,13 +83,12 @@ body {
 
 .hvr-underline-from-left::before{
   background-color: white;
-  height: 2px;
+  height: 1px;
   transition: 0.1s !important;
 }
 
 .nav-links li a {
   font-size: 1.2em;
-  font-family: 'Roboto', sans-serif;
   font-weight: 200;
 }
 
@@ -117,8 +121,8 @@ body {
 /*------------------ holiday links content----------------*/
 
 .camp-regions {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 13px;
+  margin-right: 13px;
 }
 
 @media (min-width: 1400px) {
@@ -207,136 +211,36 @@ body {
 
 /*------------------Featured holiday content----------------*/
 
-.feature-getaway {
+.jumbotron-section {
   padding-left: 28px;
   padding-right: 28px;
 }
 
 @media (min-width: 1400px) {
-  .feature-getaway {
+  .jumbotron-section {
     margin-left: 35px;
     margin-right: 35px;
   }
 }
 
-.feature-title {
-  margin-top: 100px;
-}
-
-.feature-title-text {
-  font-size: 2.5em;
-  font-family: 'Roboto', sans-serif;
-  padding: 0;
-}
-
-.feature-img {
-  height: 350px;
-  overflow: hidden;
-  border-radius: 5px;
+.jumbotron-fluid {
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 24px 38px 3px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("https://www.discovernewengland.org/sites/default/files/styles/1360x370/public/banner-images/river-in-north-conway-fall-foliage.jpg?itok=eSQmdgm_");
-}
-
-@media (max-width: 1400px) {
-  .feature-img {
-    height: 250px
-  }
-}
-
-@media (max-width: 1100px) {
-  .feature-img {
-    height: 200px;
-  }
-}
-
-.feature-img .left {
   color: white;
-  font-size: 22px;
-  font-family: 'Roboto', sans-serif;
-  max-width: 30%;
-  height: 100%;
-  margin-left: 3%;
 }
 
-@media (min-width: 1300px){
-  .feature-img .left {
-      position: absolute;
-      top: 50%;
-      left: 10% !important;
-      transform: translate(-50%, -50%);
-      font-size: 25px;
-      max-width: 20%;
-    }
-}
 
-@media (max-width: 990px){
-  .feature-img .left {
-      position: absolute;
-      top: 50%;
-      left: 17% !important;
-      transform: translate(-50%, -50%);
-      font-size: 20px;
-      max-width: 30%;
-    }
-}
 
-@media (max-width: 768px) {
-  .feature-img .left {
-      position: absolute;
-      top: 50%;
-      left: 25% !important;
-      transform: translate(-50%, -50%);
-      font-size: 20px;
-      max-width: 50%;
-    }
-}
-
-@media (max-width: 400px) {
-  .feature-img .left {
-      position: absolute;
-      top: 50%;
-      left: 35% !important;
-      transform: translate(-50%, -50%);
-      font-size: 20px;
-      max-width: 100%;
-    }
-}
-
-.feature-img .left p {
-  padding-top: 70px;
-}
-
-@media (max-width: 1400px) {
-  .feature-img .left p {
-    padding-top: 25px;
+@media (min-width:1400px) {
+  .jumbotron-container {
+    margin-left: 100px
   }
-}
-
-@media (max-width: 1100px) {
-  .feature-img .left p {
-    padding-top: 20px;
-  }
-}
-
-.feature-img .left a {
-  margin-top: 50px;
-}
-
-@media (max-width: 1400px) {
-  .feature-img .left a {
-    margin-top: 25px;
-  }
-}
-
-@media (max-width: 1100px) {
-  .feature-img .left a {
-    margin-top: 15px;
-  }
-}
-
-.hvr-sweep-to-right::before {
-  background: rgba(0, 0, 0, 0.2);
 }
 
 /*--------------west coast cards-----------*/
@@ -379,16 +283,37 @@ body {
 
 /*--------------register template tasks.html-----------*/
 
-ul:not(.browser-default)>li {
-  width: 300px !important;
-}
-
-
-.register-body {
-  background-color: red;
+.edit-cards-ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .edit-card {
+  height: 300px;
+  width: 250px;
   margin-left: 25px;
   margin-right: 25px;
+  position: relative;
+}
+
+.edit-card a {
+    color: white !important;
+}
+
+.edit-button {
+  position: absolute;
+  margin-left: 25px;
+  margin-top: 20px;
+}
+
+.delete-button {
+  position: absolute;
+  margin-left: 140px;
+  margin-top: 20px;
+  color: white;
+}
+
+.red-text a {
+  color: #ef5350 !important;
 }

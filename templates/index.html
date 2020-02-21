@@ -36,26 +36,30 @@
 </head>
 
 <body>
+
   <!---BACK TO TOP BUTTON--->
+
   <a class="btn-floating btn-large waves-effect waves-light red" onclick="topFunction()" id="myBtn" title="Go to top"><i class="material-icons">arrow_upward</i></a>
+
   <!---NAVBAR--->
+
   <div class="navbar">
     <nav class="nav-wrapper transparent">
-      <a href="#" class="brand-logo">CampUSA</a>
+      <a href="{{ url_for('index') }}" class="brand-logo">CampUSA</a>
       <a href="#" class="sidenav-trigger" data-target="mobile-links">
         <i class="material-icons">menu</i>
       </a>
       <ul class="right hide-on-med-and-down nav-links">
-        <li><a href={{ url_for('index') }} class="hvr-underline-from-left">Home</a></li>
-        <li><a href={{ url_for('get_tasks') }} class="hvr-underline-from-left">Register your place</a></li>
+        <li><a href="{{ url_for('index') }}" class="hvr-underline-from-left">Home</a></li>
+        <li><a href="{{ url_for('get_tasks') }}" class="hvr-underline-from-left">Register your place</a></li>
         <li><a href="" class="hvr-underline-from-left">About</a></li>
-        <li><a href="" class="hvr-underline-from-left">Contact</a></li>
+        <li><a href="#footer" class="hvr-underline-from-left">Contact</a></li>
       </ul>
     </nav>
   </div>
   <ul class="sidenav" id="mobile-links">
-    <li><a href={{ url_for('index') }}>Home</a></li>
-    <li><a href={{ url_for('get_tasks') }}>Register your place</a></li>
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('get_tasks') }}">Register your place</a></li>
     <li><a href="">About</a></li>
     <li><a href="">Contact</a></li>
   </ul>
@@ -66,7 +70,9 @@
       <p>lor20</p>
     </div>
   </div>
+
   <!---COUNTRY REGION LINKS--->
+
   <section class="camp-regions">
     <div class="row region-title">
       <div class="col-md-12 region-title-text">Explore Regions</div>
@@ -114,21 +120,24 @@
       </div>
     </div>
   </section>
+
   <!---FEATURED CAMPING GETAWAY--->
-  <section class="feature-getaway">
-    <div class="row feature-title">
-      <div class="col-md-12 feature-title-text">Featured Getaway</div>
+
+  <section class="jumbotron-section">
+    <div class="row region-title">
+      <div class="region-title-text">Explore Regions</div>
     </div>
-    <div class="row feature">
-      <div class="col-md-12 feature-img z-depth-5">
-        <div class="feature-info left z-depth-5">
-          <p>scenic northeastern campsite near historic town</p>
-          <a class="waves-effect waves-light btn hvr-sweep-to-right red">take me there</a>
-        </div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container jumbotron-container" style="width: 90%;">
+        <h1 class="display-4">Apalachian Getaway</h1>
+        <p class="lead">Enjoy getaway blah blah blah blah.</p>
+        <a class="waves-effect waves-light btn red">button</a>
       </div>
     </div>
   </section>
+
   <!---WEST COAST LOCATION CARDS---->
+
   <section class="west-coast-cards" id="west-coast-cards">
     <div class="row card-row">
       <div class="d-none d-md-block col-sm-4 col-md-3">
@@ -195,9 +204,9 @@
     </div>
   </section>
 
-
   <!---FOOTER--->
-  <footer class="page-footer">
+
+  <footer class="page-footer" id="footer">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">

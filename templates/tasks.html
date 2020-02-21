@@ -1,26 +1,28 @@
 {% extends 'register.html' %}
 {% block content %}
 
-<ul class="edit-cards" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+  <a href="{{ url_for('add_task') }}" class="waves-effect waves-light btn">Add campsite</a>
+
+<ul class="edit-cards-ul">
   {% for task in tasks %}
   <li>
-    <div class="card edit-card" style="height: 300px; width: 250px; margin-left: 25px; margin-right: 25px; position: relative;">
+    <div class="card edit-card">
       <div class="card-image waves-effect waves-block waves-light">
-        <a class="waves-effect waves-light btn-small edit-button" style="position: absolute; margin-left: 25px; margin-top:20px">edit</a>
-        <a class="waves-effect waves-light btn-small done-button" style="position: absolute; margin-left: 150px; margin-top:20px">done</a>
-        <img class="activator" src="https://res.cloudinary.com/demo/image/upload/w_150,h_150,c_thumb,g_face,r_20,e_sepia/l_cloudinary_icon,g_south_east,x_5,y_5,w_50,o_60,e_brightness:200/a_10/front_face.png">
+        <a href="{{url_for('edit_task', task_id=task._id)}}" class="waves-effect waves-light btn-small edit-button blue">edit</a>
+        <a href="{{url_for('delete_task', task_id=task._id)}}" class="waves-effect waves-light btn-small delete-button red">delete</a>
+        <img class="activator" src="">
       </div>
       <div class="card-content">
         <span class="card-title activator grey-text text-darken-4">{{task.camp_title}}<i class="material-icons right">more_vert</i></span>
-        <p><a href="#">This is a link</a></p>
+        <p class="red-text"><a href="{{url_for('apply_form')}}">Take me there</a></p>
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">{{task.camp_title}}<i class="material-icons right">close</i></span>
         <div class="">
-          <div class="card-location">{{task.camp_state}}</div>
-          <div class="card-state">{{task.camp_address}}</div>
-          <div class="card-arrive-by">{{task.camp_availability}}</div>
-          <div class="card-facilities">{{task.camp_description}}</div>
+          <div class="card-location"><i class="material-icons prefix">flag</i>{{task.camp_state}}</div>
+          <div class="card-state"><i class="material-icons prefix">location_on</i>{{task.camp_address}}</div>
+          <div class="card-arrive-by"><i class="material-icons prefix">event_available</i>{{task.camp_availability}}</div>
+          <div class="card-facilities"><i class="material-icons prefix">subject</i>{{task.camp_description}}</div>
         </div>
       </div>
     </div>
