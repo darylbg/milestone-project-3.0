@@ -14,7 +14,7 @@ mongo = PyMongo(app)
 
 @app.route('/index')
 def index():
-    return render_template('index.html')
+    return render_template("featuredcamps.html", tasks=mongo.db.tasks.find())
 
 @app.route('/get_tasks')
 def get_tasks():
@@ -44,7 +44,8 @@ def update_task(task_id):
         'camp_state':request.form.get('camp_state'),
         'camp_address': request.form.get('camp_address'),
         'camp_availability': request.form.get('camp_availability'),
-        'camp_description':request.form.get('camp_description')
+        'camp_description':request.form.get('camp_description'),
+        'camp_featured':request.form.get('camp_featured')
     })
     return redirect(url_for('get_tasks'))
 

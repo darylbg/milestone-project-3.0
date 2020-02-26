@@ -9,7 +9,7 @@
       <div class="input-field col-12">
         <i class="material-icons prefix">terrain</i>
         <input id="camp_title" name="camp_title" type="text" class="validate">
-        <label for="camp_title">Camp title</label>
+        <label for="camp_title" style="padding-left: 14px">Camp title</label>
       </div>
       <div class="file-field input-field col-12">
         <div class="btn">
@@ -20,12 +20,6 @@
           <input id="camp_img" name="camp_img" class="file-path validate" type="text" placeholder="Upload cover image">
         </div>
       </div>
-
-
-<input name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="image_id"
-   data-form-data="[upload-preset-and-other-upload-options-as-html-escaped-JSON-data]"></input>
-
-
       <div class="input-field col-12">
         <i class="material-icons prefix">flag</i>
         <select id="camp_state" name="camp_state" class="validate">
@@ -86,7 +80,7 @@
       <div class="input-field col-12">
         <i class="material-icons prefix">location_on</i>
         <input id="camp_address" name="camp_address" type="text" class="validate">
-        <label for="camp_address">Full address</label>
+        <label for="camp_address" style="padding-left: 14px">Full address</label>
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">event_available</i>
@@ -96,16 +90,24 @@
           <option value="Available soon enquire futher">Available soon enquire futher</option>
           <option value="Currently unavailable">Currently unavailable</option>
         </select>
-        <label for="camp_availability"></label>
+        <label for="camp_availability" style="padding-left: 14px"></label>
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">subject</i>
         <textarea id="camp_description" name="camp_description" class="materialize-textarea"></textarea>
-        <label for="camp_description">Camp description</label>
+        <label for="camp_description" style="padding-left: 14px">Camp description</label>
       </div>
-      <button class="btn waves-effect waves-light green" type="submit" name="action">Add campsite
-        <i class="material-icons right">beenhere</i>
-      </button>
+      <div class="container-fluid">
+        <label>
+          <input type="checkbox" id="camp_featured" name="camp_featured" />
+          <span>Featured</span>
+        </label>
+      </div>
+      <div class="container-fluid">
+        <button class="btn waves-effect waves-light green" type="submit" name="action">Add campsite
+          <i class="material-icons right">beenhere</i>
+        </button>
+      </div>
 
     </div>
   </form>

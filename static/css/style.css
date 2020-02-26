@@ -88,8 +88,8 @@ body {
 }
 
 .nav-links li a {
-  font-size: 1.2em;
-  font-weight: 200;
+  font-size: 1.3em;
+  font-weight: 300;
 }
 
 .nav-links li a:hover {
@@ -97,6 +97,21 @@ body {
   color: white;
   background-color: transparent;
 }
+
+.brand-logo-2 {
+  color: #424242 !important;
+  font-weight: 400 !important;
+}
+
+ .nav-links-2 {
+   color: #424242 !important;
+ }
+
+ .hvr-underline-from-center::before{
+   background-color: #424242;
+   height: 1px;
+   transition: 0.1s !important;
+ }
 
 /*------------------landing page body content----------------*/
 
@@ -279,9 +294,77 @@ body {
   font-size: 15px;
 }
 
+/*--------------index page featured content-----------*/
 
+.featured-content {
+  overflow-x: scroll !important;
+  overflow-y: hidden;
+}
+
+.featured-cards-ul {
+  width: max-content;
+}
+
+.featured-cards-ul li {
+  display: inline-block;
+  height: 400px;
+  width: 250px;
+}
+
+/*--------------register template-----------*/
+
+.register-container {
+}
 
 /*--------------register template tasks.html-----------*/
+
+.camp-display-header {
+  padding-top:  80px;
+  padding-bottom: 80px;
+}
+
+.add-campsite-button-div {
+  display: inline-block;
+  text-align: center;
+}
+
+.add-campsite-button-div a {
+  text-decoration: none;
+}
+
+.add-campsite-button-div a:hover {
+  text-decoration: none !important;
+  color: white;
+}
+
+.camp-display-title-div {
+  display: inline-block;
+  text-align: center;
+}
+
+.camp-display-title-div h6 {
+  font-size: 2.5em;
+}
+
+.card-reveal-item {
+  margin-bottom: 10px;
+}
+
+.card-reveal-item div {
+  display: inline;
+  font-size: 18px;
+}
+
+.card-reveal-input {
+  padding-left: 10px;
+}
+
+.featured-camp-checkbox {
+  padding-left: 22px;
+  display: inline-block;
+}
+
+/*--------------register template edittasks.html-----------*/
 
 .edit-cards-ul {
   display: flex;
@@ -316,4 +399,34 @@ body {
 
 .red-text a {
   color: #ef5350 !important;
+}
+
+/*------------------footer----------------*/
+
+.white-text {
+  margin-bottom: 25px !important;
+  font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
+}
+
+
+.footer-list .footer-social-button {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-contact-button {
+  margin-bottom: 10px;
+}
+
+.footer-contact-button span {
+  margin-left: 10px;
+}
+
+
+
+
+
+
+.mobile-footer {
+  position: fixed;
 }

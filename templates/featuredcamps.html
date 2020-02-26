@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% block content %}
+
+  <ul class="featured-cards-ul" style="width: max-content;">
+    {% for task in tasks %}
+    {% if task.camp_featured == 'on' %}
+    <li style="display: inline-block">
+      <div class="card featured-card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="https://res.cloudinary.com/darylb/image/upload/v1582402865/katabbkgdkohoodx6amx.jpg">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">{{task.camp_title}}<i class="material-icons right">more_vert</i></span>
+          <p class="red-text"><a href="{{url_for('apply_form')}}">Take me there</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">{{task.camp_title}}<i class="material-icons right">close</i></span>
+          <div class="">
+            <div class="card-location card-reveal-item">
+              <div><i class="material-icons prefix">flag</i></div>
+              <div class="card-reveal-input">{{task.camp_state}}</div>
+            </div>
+            <div class="card-state card-reveal-item">
+              <div><i class="material-icons prefix">location_on</i></div>
+              <div class="card-reveal-input">{{task.camp_address}}</div>
+            </div>
+            <div class="card-arrive-by card-reveal-item">
+              <div><i class="material-icons prefix">event_available</i></div>
+              <div class="card-reveal-input">{{task.camp_availability}}</div>
+            </div>
+            <div class="card-facilities card-reveal-item">
+              <div><i class="material-icons prefix">subject</i></div>
+              <div class="card-reveal-input">{{task.camp_description}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    {% else %}
+    <li class="hidden" style="display: none !important;"></li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+
+{% endblock %}
