@@ -1,23 +1,30 @@
-{% extends 'register.html' %}
+{% extends 'dashboard.html' %}
 {% block content %}
 
-<h3>edit campsite</h3>
+<div class="row camp-display-header">
+  <div class="camp-display-title-div col-6">
+    <h6 class="camp-display-title">Edit your selected camp here</h6>
+  </div>
+  <div class="add-campsite-button-div col-6">
+  </div>
+</div>
 
-<div class="row">
-  <form action="{{ url_for('update_task', task_id=task._id) }}" method="POST" class="col s12">
+<div class="row edit-camp-row">
+  <div class="hidden-xs col-sm-1 col-md-2"></div>
+  <form action="{{ url_for('update_camp', camp_id=camp._id) }}" method="POST" class="col-12 col-sm-10 col-md-8">
     <div class="row">
       <div class="input-field col-12">
         <i class="material-icons prefix">terrain</i>
-        <input id="camp_title" name="camp_title" type="text" class="validate" value="{{task.camp_title}}">
+        <input id="camp_title" name="camp_title" type="text" class="validate" value="{{camp.camp_title}}">
         <label for="camp_title" style="padding-left: 14px">Camp title</label>
       </div>
 
-      <div class="col-12">
+      <!---<div class="col-12">
         <button id="upload_widget" class="cloudinary-button">Upload files</button>
-      </div>
+      </div>--->
 
       <div class="file-field input-field">
-        <div class="btn cloudinary-button" id="upload_widget">
+        <div class="btn">
           <span>File</span>
           <input type="file">
         </div>
@@ -28,7 +35,7 @@
       <div class="input-field col-12">
         <i class="material-icons prefix">flag</i>
         <select id="camp_state" name="camp_state" class="validate">
-          <option value="" disabled selected>{{task.camp_state}}</option>
+          <option value="" disabled selected>{{camp.camp_state}}</option>
           <option value="Alabama">Alabama</option>
           <option value="Alaska">Alaska</option>
           <option value="Arizona">Arizona</option>
@@ -84,13 +91,13 @@
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">location_on</i>
-        <input id="camp_address" name="camp_address" type="text" class="validate" value="{{task.camp_address}}">
+        <input id="camp_address" name="camp_address" type="text" class="validate" value="{{camp.camp_address}}">
         <label for="camp_address" style="padding-left: 14px">Full address</label>
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">event_available</i>
         <select id="camp_availability" name="camp_availability" class="validate">
-          <option value="" disabled selected>{{task.camp_availability}}</option>
+          <option value="" disabled selected>{{camp.camp_availability}}</option>
           <option value="Currently available">Currently available</option>
           <option value="Available soon enquire futher">Available soon enquire futher</option>
           <option value="Currently unavailable">Currently unavailable</option>
@@ -99,12 +106,12 @@
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">subject</i>
-        <textarea id="camp_description" name="camp_description" class="materialize-textarea" value="">{{task.camp_description}}</textarea>
+        <textarea id="camp_description" name="camp_description" class="materialize-textarea" value="">{{camp.camp_description}}</textarea>
         <label for="camp_description" style="padding-left: 14px">Camp description</label>
       </div>
-      <div class="container-fluid">
+      <div class="container-fluid" style="margin-bottom: 35px;">
         <label>
-          {% if task.camp_featured %}
+          {% if camp.camp_featured %}
             <input type="checkbox" id="camp_featured" name="camp_featured" checked/>
           {% else %}
             <input type="checkbox" id="camp_featured" name="camp_featured" />
@@ -117,22 +124,8 @@
       </button>
     </div>
   </form>
+  <div class="hidden-xs col-sm-1 col-md-2"></div>
 </div>
 
-<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
-<script type="text/javascript">
-  var myWidget = cloudinary.createUploadWidget({
-    cloudName: 'darylb',
-    uploadPreset: 'vzrpgeu5'
-  }, (error, result) => {
-    if (!error && result && result.event === "success") {
-      console.log('Done! Here is the image info: ', result.info);
-    }
-  })
-
-  document.getElementById("upload_widget").addEventListener("click", function() {
-    myWidget.open();
-  }, false);
-</script>
 
 {% endblock %}

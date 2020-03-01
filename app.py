@@ -14,31 +14,32 @@ mongo = PyMongo(app)
 
 @app.route('/index')
 def index():
-    return render_template("featuredcamps.html", tasks=mongo.db.tasks.find())
+    return render_template("featuredcamps.html", camps=mongo.db.camps.find())
 
-@app.route('/get_tasks')
-def get_tasks():
-    return render_template("tasks.html", tasks=mongo.db.tasks.find())
+@app.route('/get_camps')
+def get_camps():
+    return render_template("camps.html", page='get_camps', camps=mongo.db.camps.find())
+    return render_template("camps.html", page='get_camps', camps=mongo.db.camps.find())
 
-@app.route('/add_task')
-def add_task():
-    return render_template('addtask.html')
+@app.route('/add_camp')
+def add_camp():
+    return render_template("addcamp.html",)
 
-@app.route('/insert_task', methods=['POST'])
-def insert_task():
-    tasks = mongo.db.tasks
-    tasks.insert_one(request.form.to_dict())
-    return redirect(url_for('get_tasks'))
+@app.route('/insert_camp', methods=['POST'])
+def insert_camp():
+    camps = mongo.db.camps
+    camps.insert_one(request.form.to_dict())
+    return redirect(url_for('get_camps'))
 
-@app.route('/edit_task/<task_id>')
-def edit_task(task_id):
-    the_task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
-    return render_template('edittask.html', task=the_task)
+@app.route('/edit_camp/<camp_id>')
+def edit_camp(camp_id):
+    the_camp = mongo.db.camps.find_one({"_id": ObjectId(camp_id)})
+    return render_template('editcamp.html', camp=the_camp,)
 
-@app.route('/update_task/<task_id>', methods=["POST"])
-def update_task(task_id):
-    tasks = mongo.db.tasks
-    tasks.update( {'_id': ObjectId(task_id)},
+@app.route('/update_camp/<camp_id>', methods=["POST"])
+def update_camp(camp_id):
+    camps = mongo.db.camps
+    camps.update( {'_id': ObjectId(camp_id)},
     {
         'camp_title':request.form.get('camp_title'),
         'camp_state':request.form.get('camp_state'),
@@ -47,12 +48,12 @@ def update_task(task_id):
         'camp_description':request.form.get('camp_description'),
         'camp_featured':request.form.get('camp_featured')
     })
-    return redirect(url_for('get_tasks'))
+    return redirect(url_for('get_camps'))
 
-@app.route('/delete_task/<task_id>')
-def delete_task(task_id):
-    mongo.db.tasks.remove({'_id': ObjectId(task_id)})
-    return redirect(url_for('get_tasks'))
+@app.route('/delete_camp/<camp_id>')
+def delete_camp(camp_id):
+    mongo.db.camps.remove({'_id': ObjectId(camp_id)})
+    return redirect(url_for('get_camps'))
 
 @app.route('/apply_form')
 def apply_form():

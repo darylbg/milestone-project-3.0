@@ -1,10 +1,17 @@
-{% extends 'register.html' %}
+{% extends 'dashboard.html' %}
 {% block content %}
 
-<h3>add campsite</h3>
+<div class="row camp-display-header">
+  <div class="camp-display-title-div col-6">
+    <h6 class="camp-display-title">Add, update or remove your campsites here</h6>
+  </div>
+  <div class="add-campsite-button-div col-6">
+  </div>
+</div>
 
-<div class="row">
-  <form action="{{ url_for('insert_task') }}" method="POST" class="col s12">
+<div class="row" style="margin-top: 0;">
+  <div class="hidden-xs col-sm-1 col-md-2"></div>
+  <form action="{{ url_for('insert_camp') }}" method="POST" class="col-12 col-sm-10 col-md-8">
     <div class="row">
       <div class="input-field col-12">
         <i class="material-icons prefix">terrain</i>
@@ -97,7 +104,7 @@
         <textarea id="camp_description" name="camp_description" class="materialize-textarea"></textarea>
         <label for="camp_description" style="padding-left: 14px">Camp description</label>
       </div>
-      <div class="container-fluid">
+      <div class="container-fluid" style="margin-bottom: 35px;">
         <label>
           <input type="checkbox" id="camp_featured" name="camp_featured" />
           <span>Featured</span>
@@ -108,9 +115,9 @@
           <i class="material-icons right">beenhere</i>
         </button>
       </div>
-
     </div>
   </form>
+  <div class="hidden-xs col-sm-1 col-md-2"></div>
 </div>
 
 {% endblock %}

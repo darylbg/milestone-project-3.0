@@ -44,7 +44,7 @@ body {
   padding: 0;
 }
 
-.tasks-navbar {
+.camps-navbar {
   position: relative;
 }
 
@@ -105,12 +105,6 @@ body {
 
  .nav-links-2 {
    color: #424242 !important;
- }
-
- .hvr-underline-from-center::before{
-   background-color: #424242;
-   height: 1px;
-   transition: 0.1s !important;
  }
 
 /*------------------landing page body content----------------*/
@@ -258,83 +252,100 @@ body {
   }
 }
 
-/*--------------west coast cards-----------*/
-
-.west-coast-cards {
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-@media (min-width: 1400px) {
-  .west-coast-cards {
-    margin-left: 35px;
-    margin-right: 35px;
-  }
-}
-
-.card {
-  max-height: 400px;
-  height: 100%;
-}
-
-.card-image {
-  height: 70%;
-}
-
-.card-image img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.card a {
-  text-decoration: none;
-  color: #f44336;
-  font-size: 15px;
-}
-
 /*--------------index page featured content-----------*/
 
 .featured-content {
-  overflow-x: scroll !important;
-  overflow-y: hidden;
+  padding-left: 28px;
+  padding-right: 28px;
 }
 
-.featured-cards-ul {
-  width: max-content;
+@media (max-width: 760px) {
+  .featured-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
-.featured-cards-ul li {
-  display: inline-block;
-  height: 400px;
-  width: 250px;
+.glide__arrow--right,
+.glide__arrow--left {
+  background-color: rgba(46, 49, 49, 0.5) !important;
 }
 
-/*--------------register template-----------*/
-
-.register-container {
+@media (max-width: 768px) {
+  .glide__arrow--right,
+  .glide__arrow--left {
+    display: none !important;
+  }
 }
 
-/*--------------register template tasks.html-----------*/
+/*--------------dashboard template-----------*/
+
+.dashboard {
+  height: 64px;
+  background-color: #424242;
+  color: white;
+}
+
+.dashboard-nav-link-2 {
+  background-color: #424242;
+}
+
+.dashboard-nav-link-2 a {
+  color: white !important;
+}
+
+.dashboard h4 {
+  margin: 0;
+  font-size: 1.5em;
+  margin-left: 25px;
+}
+
+@media (max-width:768px) {
+  .dashboard h4 {
+    width: 50%;
+    font-size: 0.9em;
+    margin-left: 0;
+  }
+}
+
+.dashboard a {
+  height: 100%;
+  width: 226px;
+  margin-right: 30%;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 1.2em;
+}
+
+@media (max-width:768px) {
+  .dashboard a {
+    margin: 0;
+    width: 50%;
+  }
+}
+
+.dashboard a:hover {
+  background-color: #757575;
+  transition: 0.3s all ease-in-out;
+}
+
+.dashboard a i {
+  margin-left: 0 !important;
+  margin-right: 30px !important;
+}
+
+/*--------------camps.html-----------*/
 
 .camp-display-header {
-  padding-top:  80px;
+  padding-top:  180px;
   padding-bottom: 80px;
 }
 
 .add-campsite-button-div {
   display: inline-block;
   text-align: center;
-}
-
-.add-campsite-button-div a {
-  text-decoration: none;
-}
-
-.add-campsite-button-div a:hover {
-  text-decoration: none !important;
-  color: white;
 }
 
 .camp-display-title-div {
@@ -360,11 +371,20 @@ body {
 }
 
 .featured-camp-checkbox {
-  padding-left: 22px;
+  padding-left: 10px;
   display: inline-block;
+  vertical-align: middle;
 }
 
-/*--------------register template edittasks.html-----------*/
+.featured-camp-checkbox label {
+  margin-bottom: 0 !important
+}
+
+/*--------------editcamp.html-----------*/
+
+.edit-camp-row {
+  margin-top: 0;
+}
 
 .edit-cards-ul {
   display: flex;
@@ -373,7 +393,6 @@ body {
 }
 
 .edit-card {
-  height: 300px;
   width: 250px;
   margin-left: 25px;
   margin-right: 25px;
@@ -382,6 +401,7 @@ body {
 
 .edit-card a {
     color: white !important;
+    text-decoration: none;
 }
 
 .edit-button {
@@ -408,25 +428,32 @@ body {
   font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
 }
 
+.footer-social-div {
+  text-align: center;
+  border-right: 1px solid white
+}
+
+.footer-contact-div {
+  text-align: center;
+}
 
 .footer-list .footer-social-button {
   display: inline-block;
   margin-right: 10px;
 }
 
-.footer-contact-button {
+.footer-contact-div li {
   margin-bottom: 10px;
 }
 
-.footer-contact-button span {
-  margin-left: 10px;
+.footer-contact-button-1 {
+  padding-left: 19px;
 }
 
+.footer-contact-button-3 {
+  padding-left: 37px;
+}
 
-
-
-
-
-.mobile-footer {
-  position: fixed;
+.footer-contact-div li span {
+  margin-left: 10px;
 }
