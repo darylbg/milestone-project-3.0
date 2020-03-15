@@ -4,6 +4,12 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.Sidenav.init(elems);
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.datepicker');
+  var instances = M.Datepicker.init(elems);
+});
+
+
 //Get the button:
 mybutton = document.getElementById("myBtn");
 
@@ -34,24 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.FormSelect.init(elems);
 });
 
-
-//var myWidget = cloudinary.createUploadWidget({
-//  cloudName: 'darylb',
-//  uploadPreset: 'vzrpgeu5'}, (error, result) => {
-//    if (!error && result && result.event === "success") {
-//      console.log('Done! Here is the image info: ', result.info);
-//    }
-//  }
-//)
-
-//document.getElementById("upload_widget").addEventListener("click", function(){
-//    myWidget.open();
-//  }, false);
-
-
+// Glide.js carousel
 
 const options = {
-  type: 'carousel',
+  type: 'slider',
   perView: 5.2,
   gap: 50,
   breakpoints: {
@@ -59,7 +51,7 @@ const options = {
       perView: 1.2,
       gap: 20
     },
-    768: {
+    900: {
       perView: 2.2,
       gap: 20
     },
@@ -70,6 +62,10 @@ const options = {
     1400: {
       perView: 4.2,
       gap: 30
+    },
+    1600: {
+      perView: 4.2,
+      gap: 40
     }
   }
 }

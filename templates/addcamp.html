@@ -2,11 +2,12 @@
 {% block content %}
 
 <div class="row camp-display-header">
-  <div class="camp-display-title-div col-6">
-    <h6 class="camp-display-title">Add, update or remove your campsites here</h6>
+  <div class="col-hidden col-lg-2"></div>
+  <div class="col-12 col-lg-8 camp-display-info">
+    <h3 class="camp-display-title">Add a new camp listing here.</h3>
+    <h4><strong> Check the featured box if you want this listing featured on the landing page of your site</strong></h4>
   </div>
-  <div class="add-campsite-button-div col-6">
-  </div>
+  <div class="col-hidden col-lg-2"></div>
 </div>
 
 <div class="row" style="margin-top: 0;">
@@ -18,14 +19,10 @@
         <input id="camp_title" name="camp_title" type="text" class="validate">
         <label for="camp_title" style="padding-left: 14px">Camp title</label>
       </div>
-      <div class="file-field input-field col-12">
-        <div class="btn">
-          <span>File</span>
-          <input id="camp_img" name="camp_img" type="file" multiple>
-        </div>
-        <div class="file-path-wrapper">
-          <input id="camp_img" name="camp_img" class="file-path validate" type="text" placeholder="Upload cover image">
-        </div>
+      <div class="input-field col-12">
+        <i class="material-icons prefix">image</i>
+        <input id="camp_img" name="camp_img" type="text" class="validate">
+        <label for="camp_img" style="padding-left: 14px">Camp img</label>
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">flag</i>
@@ -111,7 +108,7 @@
         </label>
       </div>
       <div class="container-fluid">
-        <button class="btn waves-effect waves-light green" type="submit" name="action">Add campsite
+        <button class="btn waves-effect waves-light red" type="submit" name="action">Add campsite
           <i class="material-icons right">beenhere</i>
         </button>
       </div>

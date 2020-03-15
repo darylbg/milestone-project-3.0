@@ -1,8 +1,112 @@
 {% extends 'dashboard.html' %}
 {% block content %}
 
+<div class="row camp-display-header">
+  <div class="col-hidden col-lg-2"></div>
+  <div class="col-12 col-lg-8 camp-display-info">
+    <h3 class="camp-display-title">Add a new camp listing here.</h3>
+    <h4><strong> Check the featured box if you want this listing featured on the landing page of your site</strong></h4>
+  </div>
+  <div class="col-hidden col-lg-2"></div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-md-6">
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="https://inteng-storage.s3.amazonaws.com/img/iea/MRw4y5ABO1/sizes/camping-tech-trends_resize_md.jpg">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4 flow-text" id="camp_title">{{camp.camp_title}}<i class="material-icons right">more_vert</i></span>
+        <p class="red-text" style="display: inline-block"><a href="{{url_for('apply_form')}}">Take me there</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">{{camp.camp_title}}<i class="material-icons right">close</i></span>
+        <div class="">
+          <div class="card-location card-reveal-item">
+            <div><i class="material-icons prefix">flag</i></div>
+            <div class="card-reveal-input">{{camp.camp_state}}</div>
+          </div>
+          <div class="card-state card-reveal-item">
+            <div><i class="material-icons prefix">location_on</i></div>
+            <div class="card-reveal-input">{{camp.camp_address}}</div>
+          </div>
+          <div class="card-arrive-by card-reveal-item">
+            <div><i class="material-icons prefix">event_available</i></div>
+            <div class="card-reveal-input">{{camp.camp_availability}}</div>
+          </div>
+          <div class="card-facilities card-reveal-item">
+            <div><i class="material-icons prefix">subject</i></div>
+            <div class="card-reveal-input">{{camp.camp_description}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
-
+  <form method="POST" action="{{ url_for('apply_form') }}" class="col-12 col-md-6" id="applyform">
+    <div class="">
+      {{ form.csrf_token }}
+      {{ form.first_name.label }}
+      {{ form.first_name }}
+      <ul>
+        {% for error in form.first_name.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="">
+      {{ form.last_name.label }}
+      {{ form.last_name }}
+      <ul>
+        {% for error in form.last_name.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="">
+      {{ form.email.label }}
+      {{ form.email }}
+      <ul>
+        {% for error in form.email.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="">
+      {{ form.phone.label }}
+      {{ form.phone }}
+      <ul>
+        {% for error in form.phone.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="">
+      {{ form.date_arrive.label }}
+      {{ form.date_arrive(class_="datepicker") }}
+      <ul>
+        {% for error in form.date_arrive.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="">
+      {{ form.date_leave.label }}
+      {{ form.date_leave(class_="datepicker") }}
+      <ul>
+        {% for error in form.date_leave.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="">
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </form>
+</div>
 
 {% endblock %}

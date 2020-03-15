@@ -10,7 +10,6 @@ body {
 }
 
 /*------------------landing page body background----------------*/
-
 .body-background {
   height: 100vh;
   overflow-x: hidden;
@@ -26,7 +25,6 @@ body {
 }
 
 /*------------------back to top button----------------*/
-
 #myBtn {
   display: none;
   position: fixed;
@@ -36,7 +34,6 @@ body {
 }
 
 /*------------------navbar----------------*/
-
 .navbar {
   position: absolute;
   background: transparent;
@@ -53,7 +50,7 @@ body {
 }
 
 .nav-wrapper a {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .nav-wrapper a:hover {
@@ -66,7 +63,7 @@ body {
 
 .brand-logo {
   padding-left: 25px !important;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
   font-size: 1.3rem !important;
 }
 
@@ -77,11 +74,11 @@ body {
 }
 
 .nav-links li {
-  margin-left: 10px;
-  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.hvr-underline-from-left::before{
+.hvr-underline-from-left::before {
   background-color: white;
   height: 1px;
   transition: 0.1s !important;
@@ -98,18 +95,8 @@ body {
   background-color: transparent;
 }
 
-.brand-logo-2 {
-  color: #424242 !important;
-  font-weight: 400 !important;
-}
-
- .nav-links-2 {
-   color: #424242 !important;
- }
-
 /*------------------landing page body content----------------*/
-
-.body-background .left {
+.body-background .left-background {
   position: absolute;
   top: 50%;
   left: 20%;
@@ -118,7 +105,7 @@ body {
 }
 
 @media (max-width: 990px) {
-  .left {
+  .left-background {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -128,7 +115,6 @@ body {
 }
 
 /*------------------ holiday links content----------------*/
-
 .camp-regions {
   margin-left: 13px;
   margin-right: 13px;
@@ -184,6 +170,7 @@ body {
   height: 100%;
   text-decoration: none;
 }
+
 .link-card a .link-img {
   height: 100%;
   width: 30%;
@@ -218,8 +205,7 @@ body {
   }
 }
 
-/*------------------Featured holiday content----------------*/
-
+/*------------------jumbotron content----------------*/
 .jumbotron-section {
   padding-left: 28px;
   padding-right: 28px;
@@ -244,8 +230,6 @@ body {
   color: white;
 }
 
-
-
 @media (min-width:1400px) {
   .jumbotron-container {
     margin-left: 100px
@@ -253,7 +237,6 @@ body {
 }
 
 /*--------------index page featured content-----------*/
-
 .featured-content {
   padding-left: 28px;
   padding-right: 28px;
@@ -272,90 +255,221 @@ body {
 }
 
 @media (max-width: 768px) {
+
   .glide__arrow--right,
   .glide__arrow--left {
     display: none !important;
   }
 }
 
-/*--------------dashboard template-----------*/
-
-.dashboard {
-  height: 64px;
-  background-color: #424242;
-  color: white;
+.index-featured-card {
+  height: 350px;
 }
 
-.dashboard-nav-link-2 {
+@media (max-width: 1250px) {
+  .index-featured-card {
+    height: 300px;
+  }
+}
+
+.index-card-title {
+  margin-bottom: 20px !important;
+}
+
+/*---------------main nav 2---------------------------*/
+.brand-logo-2 {
+  color: #424242 !important;
+  font-weight: 400 !important;
+}
+
+.nav-links-2-a {
+  color: #424242 !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.nav-links-2-li {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.nav-links-2-li:hover {
   background-color: #424242;
 }
 
-.dashboard-nav-link-2 a {
+.nav-links-2-a:hover {
   color: white !important;
 }
 
-.dashboard h4 {
-  margin: 0;
-  font-size: 1.5em;
-  margin-left: 25px;
+/*--------------dashboard nav 3-----------*/
+.dashboard {
+  height: 64px;
+  color: white;
+  margin-top: 64px
 }
 
-@media (max-width:768px) {
-  .dashboard h4 {
-    width: 50%;
-    font-size: 0.9em;
-    margin-left: 0;
+@media (max-width: 600px) {
+  .dashboard {
+    height: 54px;
+    color: white;
+    margin-top: 54px
   }
 }
 
-.dashboard a {
-  height: 100%;
-  width: 226px;
-  margin-right: 30%;
+.dashboard-nav {
+  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.8);
+}
+
+.dashboard-brand-logo {
+  padding-left: 10px !important;
+}
+
+@media (min-width: 900px) {
+  .dashboard-brand-logo {
+    margin-left: 20px;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard ul {
+    float: none !important;
+  }
+}
+
+.dashboard ul li {
+  margin-right: 10px;
+  margin-left: 10px;
   text-decoration: none;
   color: white;
-  text-align: center;
-  padding-top: 20px;
-  font-size: 1.2em;
 }
 
-@media (max-width:768px) {
-  .dashboard a {
-    margin: 0;
-    width: 50%;
+@media (max-width: 1200px) {
+  .dashboard ul li {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
-.dashboard a:hover {
-  background-color: #757575;
-  transition: 0.3s all ease-in-out;
+.dashboard-search {
+  height: 64px;
 }
 
-.dashboard a i {
-  margin-left: 0 !important;
-  margin-right: 30px !important;
+@media (min-width: 900px) {
+  .dashboard-search {
+    width: 300px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .dashboard-search {
+    width: 500px !important;
+  }
+}
+
+.dashboard-search form .input-field input[type=search] {
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .dashboard ul li.add-location-button {
+    width: 50%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard ul li.dashboard-nav-li {
+    width: 25%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: center !important;
+  }
+}
+
+@media (min-width: 700px) {
+  .dashboard ul li.account-link {
+    margin-right: 10px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard ul li.dashboard-nav-li i.left {
+    float: none !important;
+  }
+}
+
+.add-location-button a:hover {
+  background-color: #ff5252 !important;
+}
+
+@media (max-width: 600px) {
+  .dashboard ul li a.btn-large {
+    margin: 0 !important;
+    height: 50px !important;
+    width: 100% !important;
+    margin-bottom: 4px !important;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard ul li a.btn-large i {
+    margin-right: 5px !important
+  }
+}
+
+.dashboard ul li a {
+  text-decoration: none !important;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .add-location-button {
+    height: 54px !important;
+    margin-top: 0px;
+  }
 }
 
 /*--------------camps.html-----------*/
-
 .camp-display-header {
-  padding-top:  180px;
+  padding-top: 50px;
   padding-bottom: 80px;
 }
 
-.add-campsite-button-div {
-  display: inline-block;
+.camp-display-info {
   text-align: center;
 }
 
-.camp-display-title-div {
-  display: inline-block;
-  text-align: center;
+.camp-display-info h4 strong {
+  background-color: #fff8e1;
 }
 
-.camp-display-title-div h6 {
-  font-size: 2.5em;
+.card-image {
+  height: 62% !important;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
+
+.card-image img {
+  min-height: 100% !important;
+  min-width: 100% !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.card-content {
+  height: 38% !important;
+  padding: 20px 20px 10px 20px !important;
+}
+
 
 .card-reveal-item {
   margin-bottom: 10px;
@@ -381,7 +495,6 @@ body {
 }
 
 /*--------------editcamp.html-----------*/
-
 .edit-camp-row {
   margin-top: 0;
 }
@@ -390,24 +503,54 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.edit-card {
-  width: 250px;
+.edit-cards-ul li {
   margin-left: 25px;
   margin-right: 25px;
-  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 750px) {
+  .edit-cards-ul li {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+}
+
+  .edit-card {
+    width: 250px;
+    height: 300px;
+    position: relative;
+  }
+
+
+@media (max-width: 768px) {
+  .edit-card {
+    width: 230px;
+    height: 280px;
+  }
 }
 
 .edit-card a {
-    color: white !important;
-    text-decoration: none;
+  color: white !important;
+  text-decoration: none;
 }
 
 .edit-button {
   position: absolute;
-  margin-left: 25px;
+  margin-left: 30px;
   margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .edit-button {
+    margin-left: 15px;
+  }
 }
 
 .delete-button {
@@ -421,11 +564,23 @@ body {
   color: #ef5350 !important;
 }
 
-/*------------------footer----------------*/
+/*------------------applyform.html----------------*/
 
+#appplyform.row {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+@media (min-width: 1000px) {
+  #appplyform.row {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+/*------------------footer----------------*/
 .white-text {
   margin-bottom: 25px !important;
-  font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
 }
 
 .footer-social-div {
@@ -447,11 +602,11 @@ body {
 }
 
 .footer-contact-button-1 {
-  padding-left: 19px;
+  padding-left: 22px;
 }
 
 .footer-contact-button-3 {
-  padding-left: 37px;
+  padding-left: 44px;
 }
 
 .footer-contact-div li span {

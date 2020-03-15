@@ -46,32 +46,41 @@
       <a href="#" class="sidenav-trigger" data-target="mobile-links">
         <i class="material-icons" style="color: #424242">menu</i>
       </a>
-      <ul class="right hide-on-med-and-down nav-links"id="dashboard-nav">
-        <li><a href="{{ url_for('index') }}" class="nav-links-2">Home</a></li>
-        <li class="dashboard-nav-link-2"><a {% if page == 'get_camps' %}class="active"{% endif %} href="{{ url_for('get_camps') }}" class="nav-links-2">Dashboard</a></li>
-        <li><a href="" class="nav-links-2">About</a></li>
-        <li><a href="{{ url_for('index', _anchor='footer') }}" class="nav-links-2">Contact</a></li>
+      <ul class="right hide-on-med-and-down nav-links" id="">
+        <li class="nav-links-2-li"><a href="{{ url_for('index') }}" class="nav-links-2-a"><span>Home</span></a></li>
+        <li class="nav-links-2-li"><a href="{{ url_for('get_camps') }}" class="nav-links-2-a"><span>Dashboard</span></a></li>
+        <li class="nav-links-2-li"><a href="" class="nav-links-2-a"><span>About</span></a></li>
+        <li class="nav-links-2-li"><a href="#footer" class="nav-links-2-a"><span>Contact</span></a></li>
       </ul>
     </nav>
-    <div class="dashboard container-fluid">
-      <h4>Dashboard</h4>
-      <a href="{{ url_for('add_camp') }}" class="">Add campsite<i class="material-icons right">add_location</i></a>
-    </div>
   </div>
-
   <ul class="sidenav" id="mobile-links">
     <li><a href="{{ url_for('index') }}">Home</a></li>
-    <li><a href="{{ url_for('get_camps') }}">Dashboard</a></li>
+    <li><a {% if page == 'get_camps' %}class="active" {% endif %} href="{{ url_for('get_camps') }}">Dashboard</a></li>
     <li><a href="">About</a></li>
-    <li><a href="{{ url_for('index', _anchor='footer') }}">Contact</a></li>
+    <li><a href="#footer">Contact</a></li>
   </ul>
-
-
-
-
-  <!---<div class="col-12">
-    <button id="upload_widget" class="cloudinary-button">Upload files</button>
-  </div>--->
+  <div class="dashboard navbar-fixed">
+    <nav class="grey darken-3 dashboard-nav">
+      <div class="nav-wrapper">
+        <a href="{{ url_for('get_camps') }}" class="brand-logo left hide-on-small-and-down dashboard-brand-logo">Dashboard</a>
+        <ul id="nav-mobile" class="right">
+          <li class="hide-on-med-and-down dashboard-search">
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+          </li>
+          <li class="add-location-button"><a href="{{ url_for('add_camp')}}" class="waves-effect waves-light btn-large red"><i class="material-icons left">add_location</i><span>Add campsite</span></a></li>
+          <li class="dashboard-nav-li"><a href=""><i class="material-icons left">settings</i><span class="hide-on-small-and-down">Settings</span></a></li>
+          <li class="dashboard-nav-li account-link"><a href=""><i class="material-icons left">person</i><span class="hide-on-small-and-down">Account</span></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
   <div class="container-fluid dashboard-container">
     {% block content %}
@@ -123,6 +132,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/initial.jquery') }}" defer></script>
 
 </body>
 
