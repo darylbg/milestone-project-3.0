@@ -12,7 +12,7 @@
 
 <div class="row edit-camp-row">
   <div class="hidden-xs col-sm-1 col-md-2"></div>
-  <form action="{{ url_for('update_camp', camp_id=camp._id) }}" method="POST" class="col-12 col-sm-10 col-md-8">
+  <!---<form action="{{ url_for('update_camp', camp_id=camp._id) }}" method="POST" class="col-12 col-sm-10 col-md-8">
     <div class="row">
       <div class="input-field col-12">
         <i class="material-icons prefix">terrain</i>
@@ -21,7 +21,7 @@
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">image</i>
-        <input id="camp_img" name="camp_img" type="text" class="validate">
+        <input id="camp_img" name="camp_img" type="text" class="validate" value="{{camp.camp_img}}">
         <label for="camp_img" style="padding-left: 14px">Camp img</label>
       </div>
       <div class="input-field col-12">
@@ -36,8 +36,8 @@
           <option value="Colorado">Colorado</option>
           <option value="Connecticut">Connecticut</option>
           <option value="Delaware">Delaware</option>
-          <option value="3">Florida</option>
-          <option value="Florida">Georgia</option>
+          <option value="Florida">Florida</option>
+          <option value="Georgia">Georgia</option>
           <option value="Hawaii">Hawaii</option>
           <option value="Idaho">Idaho</option>
           <option value="Illanois">Illanois</option>
@@ -46,8 +46,8 @@
           <option value="Kansas">Kansas</option>
           <option value="Kentucky">Kentucky</option>
           <option value="Louisiana">Louisiana</option>
-          <option value="3">Maine</option>
-          <option value="Maine">Maryland</option>
+          <option value="Maine">Maine</option>
+          <option value="Maryland">Maryland</option>
           <option value="Massachusetts">Massachusetts</option>
           <option value="Michigan">Michigan</option>
           <option value="Minnesota">Minnesota</option>
@@ -90,11 +90,21 @@
         <i class="material-icons prefix">event_available</i>
         <select id="camp_availability" name="camp_availability" class="validate">
           <option value="" disabled selected>{{camp.camp_availability}}</option>
-          <option value="Currently available">Currently available</option>
+          <option value="location_on">Currently available</option>
           <option value="Available soon enquire futher">Available soon enquire futher</option>
           <option value="Currently unavailable">Currently unavailable</option>
         </select>
         <label for="camp_availability" style="padding-left: 14px">Select availability</label>
+      </div>
+      <div class="input-field col-12">
+        <i class="material-icons prefix">group</i>
+        <select id="camp_capacity" name="camp_capacity" class="validate">
+          <option value="" disabled selected>{{camp.camp_capacity}}</option>
+          <option value="2 or less">2 or less</option>
+          <option value="Group up to 5">Group up to 5</option>
+          <option value="Group up to 10">Group up to 10</option>
+        </select>
+        <label for="camp_capacity" style="padding-left: 14px">Select capacity</label>
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">subject</i>
@@ -111,10 +121,82 @@
           <span>Featured</span>
         </label>
       </div>
-      <button class="btn waves-effect waves-light" type="submit" name="action">Edit camp
+      <button class="btn waves-effect waves-light red" type="submit" name="action">Edit camp
         <i class="material-icons right">send</i>
       </button>
     </div>
+  </form>--->
+  <form action="{{ url_for('update_camp', camp_id=camp._id) }}" method="POST" id="editform" class="col-12 col-sm-10 col-md-8">
+    <div class="input-field col-12">
+      {{ form.csrf_token }}
+      <i class="material-icons prefix">terrain</i>
+      {{ form.camp_title.label }}
+      {{ form.camp_title }}
+      <ul>
+        {% for error in form.camp_title.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="input-field col-12">
+      <i class="material-icons prefix">image</i>
+      {{ form.camp_img.label }}
+      {{ form.camp_img }}
+      <ul>
+        {% for error in form.camp_img.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="input-field col-12">
+      <i class="material-icons prefix">flag</i>
+      {{ form.camp_state }}
+      {{ form.camp_state.label }}
+      <ul>
+        {% for error in form.camp_state.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="input-field col-12">
+      <i class="material-icons prefix">location_on</i>
+      {{ form.camp_address.label }}
+      {{ form.camp_address }}
+      <ul>
+        {% for error in form.camp_address.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="input-field col-12">
+      <i class="material-icons prefix">location_on</i>
+      {{ form.camp_availability }}
+      {{ form.camp_availability.label }}
+      <ul>
+        {% for error in form.camp_availability.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="input-field col-12">
+      <i class="material-icons prefix">subject</i>
+      {{ form.camp_description.label }}
+      {{ form.camp_description }}
+      <ul>
+        {% for error in form.camp_description.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <p>
+      <label for="">
+      {{ form.camp_featured }}
+      <span>Featured</span>
+      </label>
+    </p>
+    <button class="btn waves-effect waves-light red" type="submit" name="action">Edit camp
+      <i class="material-icons right">send</i>
+    </button>
   </form>
   <div class="hidden-xs col-sm-1 col-md-2"></div>
 </div>

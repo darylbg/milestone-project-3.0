@@ -12,7 +12,7 @@
 
 <div class="row" style="margin-top: 0;">
   <div class="hidden-xs col-sm-1 col-md-2"></div>
-  <form action="{{ url_for('insert_camp') }}" method="POST" class="col-12 col-sm-10 col-md-8">
+  <!---<form action="{{ url_for('insert_camp') }}" method="POST" class="col-12 col-sm-10 col-md-8">
     <div class="row">
       <div class="input-field col-12">
         <i class="material-icons prefix">terrain</i>
@@ -97,6 +97,16 @@
         <label for="camp_availability" style="padding-left: 14px"></label>
       </div>
       <div class="input-field col-12">
+        <i class="material-icons prefix">group</i>
+        <select id="camp_capacity" name="camp_capacity" class="validate">
+          <option value="" disabled selected>Select group size</option>
+          <option value="2 or less">2 or less</option>
+          <option value="Group up to 5">Group up to 5</option>
+          <option value="Group up to 10">Group up to 10</option>
+        </select>
+        <label for="camp_capacity" style="padding-left: 14px">Select capacity</label>
+      </div>
+      <div class="input-field col-12">
         <i class="material-icons prefix">subject</i>
         <textarea id="camp_description" name="camp_description" class="materialize-textarea"></textarea>
         <label for="camp_description" style="padding-left: 14px">Camp description</label>
@@ -113,7 +123,81 @@
         </button>
       </div>
     </div>
+  </form>--->
+
+  <form action="{{ url_for('insert_camp') }}" method="POST" class="col-12 col-sm-10 col-md-8">
+    <div class="input-field col-12">
+      {{ form.csrf_token }}
+      <i class="material-icons prefix">terrain</i>
+      {{ form.camp_title.label }}
+      {{ form.camp_title }}
+      <ul>
+        {% for error in form.camp_title.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="input-field col-12">
+      <i class="material-icons prefix">image</i>
+      {{ form.camp_img.label }}
+      {{ form.camp_img }}
+      <ul>
+        {% for error in form.camp_img.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="input-field col-12">
+      <i class="material-icons prefix">flag</i>
+      {{ form.camp_state }}
+      {{ form.camp_state.label }}
+      <ul>
+        {% for error in form.camp_state.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="input-field col-12">
+      <i class="material-icons prefix">location_on</i>
+      {{ form.camp_address.label }}
+      {{ form.camp_address }}
+      <ul>
+        {% for error in form.camp_address.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="input-field col-12">
+      <i class="material-icons prefix">location_on</i>
+      {{ form.camp_availability }}
+      {{ form.camp_availability.label }}
+      <ul>
+        {% for error in form.camp_availability.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="input-field col-12">
+      <i class="material-icons prefix">subject</i>
+      {{ form.camp_description.label }}
+      {{ form.camp_description }}
+      <ul>
+        {% for error in form.camp_description.errors %}
+        <li style="color:red;">{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <p>
+      <label for="">
+      {{ form.camp_featured }}
+      <span>Featured</span>
+      </label>
+    </p>
+    <button class="btn waves-effect waves-light red" type="submit" name="action">Edit camp
+      <i class="material-icons right">send</i>
+    </button>
   </form>
+
   <div class="hidden-xs col-sm-1 col-md-2"></div>
 </div>
 

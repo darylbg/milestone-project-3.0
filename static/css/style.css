@@ -101,7 +101,10 @@ body {
   top: 50%;
   left: 20%;
   transform: translate(-50%, -50%);
-  color: #f0f1f2;
+  background-color: #f9f9f9;
+  height: auto;
+  width: 400px;
+
 }
 
 @media (max-width: 990px) {
@@ -112,6 +115,28 @@ body {
     transform: translate(-50%, -50%);
     color: #f0f1f2;
   }
+}
+
+.index-form-title {
+  text-align: center;
+}
+
+.index-form-item {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.index-form-item label {
+  color: #000;
+}
+
+.left-background .index-form-button {
+  display: block;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  float: right;
 }
 
 /*------------------ holiday links content----------------*/
@@ -494,7 +519,7 @@ body {
   margin-bottom: 0 !important
 }
 
-/*--------------editcamp.html-----------*/
+/*--------------edit cards in camp.html-----------*/
 .edit-camp-row {
   margin-top: 0;
 }
@@ -562,6 +587,17 @@ body {
 
 .red-text a {
   color: #ef5350 !important;
+}
+
+/*------------------edtcamp.html----------------*/
+
+.edit-camp-row form .input-field {
+  margin-top: 25px !important;
+  margin-bottom: 25px !important;
+}
+
+.edit-camp-row form label {
+  padding-left: 18px !important;
 }
 
 /*------------------applyform.html----------------*/

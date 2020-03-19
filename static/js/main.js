@@ -4,17 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.Sidenav.init(elems);
 });
 
+//datepicker
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.datepicker');
   var instances = M.Datepicker.init(elems);
 });
 
 
-//Get the button:
+//scroll to top button
 mybutton = document.getElementById("myBtn");
 
-
-// When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {
   scrollFunction()
 };
@@ -27,14 +26,71 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
+
 function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-//selector forms
+//search autocomplete
+$(document).ready(function(){
+    $('input.autocomplete').autocomplete({
+      data: {
+        "Alabama": null,
+        "Alaska": null,
+        "Arizona": null,
+        "Arkansas": null,
+        "California": null,
+        "Colorado": null,
+        "Connecticut": null,
+        "Delaware": null,
+        "Florida": null,
+        "Georgia": null,
+        "Hawaii": null,
+        "Idaho": null,
+        "Illanois": null,
+        "Indiana": null,
+        "Iowa": null,
+        "Kansas": null,
+        "Kentucky": null,
+        "Louisiana": null,
+        "Maine": null,
+        "Maryland": null,
+        "Massachusetts": null,
+        "Michigan": null,
+        "Minnesota": null,
+        "Mississippi": null,
+        "Missouri": null,
+        "Montana": null,
+        "Nebraska": null,
+        "Nevada": null,
+        "New Hampshire": null,
+        "New Jersey": null,
+        "New Mexico": null,
+        "New York": null,
+        "North Carolina": null,
+        "Noth Dakota": null,
+        "Ohio": null,
+        "Oklahoma": null,
+        "Oregon": null,
+        "Pennsylvania": null,
+        "Rhode Island": null,
+        "South Carolina": null,
+        "South Dakota": null,
+        "Tennessee": null,
+        "Texas": null,
+        "Utah": null,
+        "Vermont": null,
+        "Virginia": null,
+        "Washington": null,
+        "West Virginia": null,
+        "Wisconsin": null,
+        "Wyoming": null
+      },
+    });
+  });
 
+//selector forms
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('select');
   var instances = M.FormSelect.init(elems);

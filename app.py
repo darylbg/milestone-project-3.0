@@ -3,7 +3,7 @@ from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, TextField, IntegerField, DateField
+from wtforms import StringField, SelectField, TextField, IntegerField, DateField, BooleanField
 from wtforms.validators import InputRequired, Length, AnyOf
 
 app = Flask(__name__)
@@ -27,7 +27,9 @@ def get_camps():
 
 @app.route('/add_camp')
 def add_camp():
-    return render_template("addcamp.html",)
+    form = EditForm()
+    form.validate_on_submit()
+    return render_template("addcamp.html", form=form)
 
 @app.route('/insert_camp', methods=['POST'])
 def insert_camp():
@@ -35,12 +37,30 @@ def insert_camp():
     camps.insert_one(request.form.to_dict())
     return redirect(url_for('get_camps'))
 
+class EditForm(FlaskForm):
+    camp_title = TextField('Camp title', validators=[InputRequired()], id='camp_title', _name='camp_title')
+    camp_img = TextField('Camp image', validators=[InputRequired()], id='camp_img', _name='camp_img')
+    camp_state = SelectField('Select camp state', validators=[InputRequired()], id='camp_state', _name='camp_state', choices=[('',''), ('Alabama', 'Alabama'), ('Alaska', 'Alaska'), ('Arizona', 'Arizona'), ('Arkansas', 'Arkansas'),
+    ('California', 'California'), ('Colorado', 'Colorado'), ('Connecticut', 'Connecticut'), ('Delaware', 'Delaware'), ('Florida', 'Florida'), ('Georgia', 'Georgia'), ('Hawaii', 'Hawaii'), ('Idaho', 'Idaho'), ('Illanois', 'Illanois'), ('Indiana', 'Indiana'),
+     ('Iowa', 'Iowa'), ('Kansas', 'Kansas'), ('Kentucky', 'Kentucky'), ('Louisiana', 'Louisiana'), ('Maine', 'Maine'), ('Maryland', 'Maryland'), ('Massachusetts', 'Massachusetts'), ('Michigan', 'Michigan'), ('Minnesota', 'Minnesota'), ('Mississippi', 'Mississippi'), ('Missouri', 'Missouri'),
+     ('Montana', 'Montana'), ('Nebraska', 'Nebraska'), ('Nevada', 'Nevada'), ('New Hampshire', 'New Hampshire'), ('New Jersey', 'New Jersey'), ('New Mexico', 'New Mexico'), ('New York', 'New York'), ('North Carolina', 'North Carolina'), ('Noth Dakota', 'Noth Dakota'), ('Ohio', 'Ohio'), ('Oklahoma', 'Oklahoma'),
+     ('Oregon', 'Oregon'), ('Pennsylvania', 'Pennsylvania'), ('Rhode Island', 'Rhode Island'), ('South Carolina', 'South Carolina'), ('South Dakota', 'South Dakota'), ('Tennessee', 'Tennessee'), ('Texas', 'Texas'), ('Utah', 'Utah'), ('Vermont', 'Vermont'), ('Virginia', 'Virginia'), ('Washington', 'Washington'),
+     ('West Virginia', 'West Virginia'), ('Wisconsin', 'Wisconsin'), ('Wyoming', 'Wyoming')])
+    camp_address = TextField('Camp address', validators=[InputRequired()], id=['camp_address'], _name=['camp_address'])
+    camp_availability = SelectField('Select availability', validators=[InputRequired()], id='camp_availability', _name='camp_availability', choices=[('', ''), ('Currently available', 'Currently available'), ('Available soon enquire futher', 'Available soon enquire futher'), ('Currently unavailable', 'Currently unavailable')])
+    camp_description = TextField('Camp description', validators=[InputRequired()], id='camp_description', _name='camp_description')
+    camp_featured = BooleanField('', id='camp_featured', _name='camp_featured')
+
 @app.route('/edit_camp/<camp_id>')
 def edit_camp(camp_id):
     the_camp = mongo.db.camps.find_one({"_id": ObjectId(camp_id)})
-    return render_template('editcamp.html', camp=the_camp)
+    form = EditForm()
+    if form.validate_on_submit():
+        return '<h1>successful</h1>'
 
-@app.route('/update_camp/<camp_id>', methods=["POST"])
+    return render_template('editcamp.html', camp=the_camp, form=form)
+
+@app.route('/update_camp/<camp_id>', methods=["GET", "POST"])
 def update_camp(camp_id):
     camps = mongo.db.camps
     camps.update( {'_id': ObjectId(camp_id)},
@@ -53,6 +73,7 @@ def update_camp(camp_id):
         'camp_featured':request.form.get('camp_featured'),
         'camp_img':request.form.get('camp_img')
     })
+
     return redirect(url_for('get_camps'))
 
 @app.route('/delete_camp/<camp_id>')
@@ -72,11 +93,10 @@ class ApplyForm(FlaskForm):
 def apply_form():
 
     form = ApplyForm()
-
     if form.validate_on_submit():
         return '<h3>The form has been submitted!</h3>'
 
-    return render_template('applyform.html', form=form, camp=mongo.db.camps.find_one())
+    return render_template('applyform.html', form=form)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

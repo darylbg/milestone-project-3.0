@@ -69,9 +69,43 @@
   <!---BODY BACKGROUND--->
   <div class="body-background">
     <img class="body-background-img" src="https://images.wallpaperscraft.com/image/tent_camping_mountains_sunset_110237_1920x1080.jpg" alt="">
-    <div class="left-background">
-      <p>lor20</p>
-    </div>
+    <form action="" class="left-background z-depth-5">
+      <div class="index-form-title index-form-item">
+        <h5>Find your next adventure here</h5>
+      </div>
+      <div class="index-form-item">
+        <div class="input-field">
+          <input type="text" id="autocomplete-input" class="autocomplete">
+          <label for="autocomplete-input">Select state</label>
+        </div>
+      </div>
+      <div class="index-form-item">
+        <div class="input-field">
+          <select id="camp_capacity" name="camp_capacity" class="">
+            <option value="" style="padding-left: 25px !important; color: grey !important;" disabled selected>Select your group size</option>
+            <option value="2 or less">2 or less</option>
+            <option value="Group up to 5">Group up to 5</option>
+            <option value="Group up to 10">Group up to 10</option>
+          </select>
+          <label for="camp_capacity">Select capacity</label>
+        </div>
+      </div>
+      <div class="index-form-item">
+        <div class="input-field">
+          <input type="text" class="datepicker" id="datepicker">
+          <label for="datepicker">Date arrive</label>
+        </div>
+      </div>
+      <div class="index-form-item">
+        <div class="input-field">
+          <input type="text" class="datepicker" id="datepicker">
+          <label for="datepicker">Date leave</label>
+        </div>
+      </div>
+        <button class="btn waves-effect waves-light red index-form-button" type="submit" name="action">Search
+          <i class="material-icons right" style="color: white;">send</i>
+        </button>
+    </form>
   </div>
 
   <!---COUNTRY REGION LINKS--->
