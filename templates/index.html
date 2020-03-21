@@ -76,7 +76,7 @@
       <div class="index-form-item">
         <div class="input-field">
           <input type="text" id="autocomplete-input" class="autocomplete">
-          <label for="autocomplete-input">Select state</label>
+          <label for="autocomplete-input">Search state, start typing</label>
         </div>
       </div>
       <div class="index-form-item">
@@ -110,7 +110,7 @@
 
   <!---COUNTRY REGION LINKS--->
 
-  <section class="camp-regions">
+  <!---<section class="camp-regions">
     <div class="row region-title">
       <div class="col-md-12 region-title-text">Explore Regions</div>
     </div>
@@ -156,9 +156,29 @@
         </div>
       </div>
     </div>
+  </section>--->
+
+  <!---featured content--->
+
+  <section class="featured-content">
+    <div class="container-fluid featured-content-title">
+      <h4>Fetured campsites, best deals and amazing locatins</h4>
+    </div>
+    <div class="container-fluid">
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          {% block content %}
+          {% endblock %}
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="material-icons prefix">arrow_back</i></button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="material-icons prefix">arrow_forward</i></button>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!---FEATURED CAMPING GETAWAY--->
+  <!---jumbotron--->
 
   <section class="jumbotron-section">
     <div class="row region-title">
@@ -173,22 +193,6 @@
     </div>
   </section>
 
-  <!---database featured content--->
-
-  <section class="featured-content">
-    <div class="container-fluid">
-      <div class="glide">
-        <div class="glide__track" data-glide-el="track">
-          {% block content %}
-          {% endblock %}
-        </div>
-        <div class="glide__arrows" data-glide-el="controls">
-          <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="material-icons prefix">arrow_back</i></button>
-          <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="material-icons prefix">arrow_forward</i></button>
-        </div>
-      </div>
-    </div>
-  </section>
   <!---FOOTER--->
 
   <footer class="page-footer grey darken-3" id="footer">

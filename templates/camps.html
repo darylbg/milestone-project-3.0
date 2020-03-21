@@ -16,8 +16,13 @@
     <li>
       <div class="card edit-card">
         <div class="card-image waves-effect waves-block waves-light">
+          {% if camp.camp_edit_lock == "campeditlocked22" %}
+          <a href="{{url_for('edit_camp', camp_id=camp._id)}}" class="waves-effect waves-light btn-small edit-button blue" disabled>edit</a>
+          <a href="{{url_for('delete_camp', camp_id=camp._id)}}" class="waves-effect waves-light btn-small delete-button red" disabled>delete</a>
+          {% else %}
           <a href="{{url_for('edit_camp', camp_id=camp._id)}}" class="waves-effect waves-light btn-small edit-button blue">edit</a>
           <a href="{{url_for('delete_camp', camp_id=camp._id)}}" class="waves-effect waves-light btn-small delete-button red">delete</a>
+          {% endif %}
           {% if camp.camp_img == "" %}
           <img class="activator" src="https://inteng-storage.s3.amazonaws.com/img/iea/MRw4y5ABO1/sizes/camping-tech-trends_resize_md.jpg">
           {% else %}

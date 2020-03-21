@@ -103,18 +103,72 @@ body {
   transform: translate(-50%, -50%);
   background-color: #f9f9f9;
   height: auto;
-  width: 400px;
-
+  width: auto;
 }
 
-@media (max-width: 990px) {
-  .left-background {
+@media (max-width: 1700px) {
+  .body-background .left-background {
+    left: 20% !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .body-background .left-background {
+    left: 30% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .body-background .left-background {
+    left: 50% !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .body-background .left-background {
+    width: 350px;
+  }
+}
+
+@media (max-width: 400px) {
+  .body-background .left-background {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 50% !important;
     transform: translate(-50%, -50%);
-    color: #f0f1f2;
+    width: 250px;
   }
+}
+
+.datepicker-modal {
+  max-height: fit-content !important;
+}
+
+.index-form-item .input-field .modal {
+  width: 100% !important;
+}
+
+.index-form-item .input-field .datepicker-modal {
+  min-width: 100px;
+}
+
+@media only screen and (min-width: 601px) {
+  .index-form-item .input-field .datepicker-container.modal-content {
+    /* -webkit-box-orient: horizontal; */
+    /* -webkit-box-direction: normal; */
+    -webkit-flex-direction: column !important;
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
+  }
+}
+
+.index-form-item .datepicker-controls {
+  width: 100% !important;
+}
+
+
+.index-form-item .datepicker-footer {
+  width: 100% !important;
 }
 
 .index-form-title {
@@ -126,6 +180,15 @@ body {
   padding-right: 25px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+@media (max-width: 575px) {
+  .index-form-item {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 }
 
 .index-form-item label {
@@ -272,6 +335,11 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
+}
+
+.featured-content-title {
+  margin-top: 150px;
+  margin-bottom: 80px;
 }
 
 .glide__arrow--right,
@@ -461,6 +529,10 @@ body {
   }
 }
 
+.dashboard-container {
+  padding: 0;
+}
+
 /*--------------camps.html-----------*/
 .camp-display-header {
   padding-top: 50px;
@@ -494,7 +566,6 @@ body {
   height: 38% !important;
   padding: 20px 20px 10px 20px !important;
 }
-
 
 .card-reveal-item {
   margin-bottom: 10px;
@@ -547,12 +618,11 @@ body {
   }
 }
 
-  .edit-card {
-    width: 250px;
-    height: 300px;
-    position: relative;
-  }
-
+.edit-card {
+  width: 250px;
+  height: 300px;
+  position: relative;
+}
 
 @media (max-width: 768px) {
   .edit-card {
@@ -590,7 +660,6 @@ body {
 }
 
 /*------------------edtcamp.html----------------*/
-
 .edit-camp-row form .input-field {
   margin-top: 25px !important;
   margin-bottom: 25px !important;
@@ -600,8 +669,17 @@ body {
   padding-left: 18px !important;
 }
 
-/*------------------applyform.html----------------*/
+/*------------------addcamp.html----------------*/
+.add-camp-row form .input-field {
+  margin-top: 25px !important;
+  margin-bottom: 25px !important;
+}
 
+.add-camp-row form label {
+  padding-left: 18px !important;
+}
+
+/*------------------applyform.html----------------*/
 #appplyform.row {
   margin-left: 100px;
   margin-right: 100px;
@@ -613,6 +691,7 @@ body {
     margin-right: 100px;
   }
 }
+
 /*------------------footer----------------*/
 .white-text {
   margin-bottom: 25px !important;
@@ -622,6 +701,12 @@ body {
 .footer-social-div {
   text-align: center;
   border-right: 1px solid white
+}
+
+@media (max-width: 575px) {
+  .footer-social-div {
+    border-right: none;
+  }
 }
 
 .footer-contact-div {

@@ -1,0 +1,17 @@
+{% extends 'dashboard.html' %}
+{% block content %}
+
+<div class="row camp-display-header">
+  <div class="col-hidden col-lg-2"></div>
+  <div class="col-12 col-lg-8 camp-display-info">
+    <h3 class="camp-display-title" style="padding-bottom: 80px;">Your application has been submitted succesfully</h3>
+    <h4 style="padding-bottom: 80px;"><strong>return to home</strong></h4>
+    <a href="{{ url_for('index') }}" class="waves-effect waves-light btn-large red">Home</a>
+  </div>
+  <div class="col-hidden col-lg-2"></div>
+</div>
+
+<div class="row">
+<div class="col-12 col-md-6"></div>
+
+{% endblock %}

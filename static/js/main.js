@@ -99,9 +99,10 @@ document.addEventListener('DOMContentLoaded', function() {
 // Glide.js carousel
 
 const options = {
-  type: 'slider',
+  type: 'carousel',
   perView: 5.2,
   gap: 50,
+  bound: true,
   breakpoints: {
     440: {
       perView: 1.2,

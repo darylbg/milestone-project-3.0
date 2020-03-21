@@ -12,21 +12,25 @@
 
 <div class="row edit-camp-row">
   <div class="hidden-xs col-sm-1 col-md-2"></div>
-  <!---<form action="{{ url_for('update_camp', camp_id=camp._id) }}" method="POST" class="col-12 col-sm-10 col-md-8">
+  <form action="{{ url_for('update_camp', camp_id=camp._id) }}" method="POST" class="col-12 col-sm-10 col-md-8">
     <div class="row">
       <div class="input-field col-12">
         <i class="material-icons prefix">terrain</i>
-        <input id="camp_title" name="camp_title" type="text" class="validate" value="{{camp.camp_title}}">
+        <input id="camp_title" name="camp_title" type="text" class="validate" value="{{camp.camp_title}}" required>
         <label for="camp_title" style="padding-left: 14px">Camp title</label>
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">image</i>
-        <input id="camp_img" name="camp_img" type="text" class="validate" value="{{camp.camp_img}}">
+        {% if camp.camp_img == "" %}
+        <input id="camp_img" name="camp_img" type="text" class="validate" value="https://inteng-storage.s3.amazonaws.com/img/iea/MRw4y5ABO1/sizes/camping-tech-trends_resize_md.jpg" required>
+        {% else %}
+        <input id="camp_img" name="camp_img" type="text" class="validate" value="{{camp.camp_img}}" required>
+        {% endif %}
         <label for="camp_img" style="padding-left: 14px">Camp img</label>
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">flag</i>
-        <select id="camp_state" name="camp_state" class="validate">
+        <select id="camp_state" name="camp_state" class="validate" required>
           <option value="" disabled selected>{{camp.camp_state}}</option>
           <option value="Alabama">Alabama</option>
           <option value="Alaska">Alaska</option>
@@ -83,12 +87,12 @@
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">location_on</i>
-        <input id="camp_address" name="camp_address" type="text" class="validate" value="{{camp.camp_address}}">
+        <input id="camp_address" name="camp_address" type="text" class="validate" value="{{camp.camp_address}}" required>
         <label for="camp_address" style="padding-left: 14px">Full address</label>
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">event_available</i>
-        <select id="camp_availability" name="camp_availability" class="validate">
+        <select id="camp_availability" name="camp_availability" class="validate" required>
           <option value="" disabled selected>{{camp.camp_availability}}</option>
           <option value="location_on">Currently available</option>
           <option value="Available soon enquire futher">Available soon enquire futher</option>
@@ -98,7 +102,7 @@
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">group</i>
-        <select id="camp_capacity" name="camp_capacity" class="validate">
+        <select id="camp_capacity" name="camp_capacity" class="validate" required>
           <option value="" disabled selected>{{camp.camp_capacity}}</option>
           <option value="2 or less">2 or less</option>
           <option value="Group up to 5">Group up to 5</option>
@@ -108,7 +112,7 @@
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">subject</i>
-        <textarea id="camp_description" name="camp_description" class="materialize-textarea" value="">{{camp.camp_description}}</textarea>
+        <textarea id="camp_description" name="camp_description" class="materialize-textarea" value="" required>{{camp.camp_description}}</textarea>
         <label for="camp_description" style="padding-left: 14px">Camp description</label>
       </div>
       <div class="container-fluid" style="margin-bottom: 35px;">
@@ -125,78 +129,6 @@
         <i class="material-icons right">send</i>
       </button>
     </div>
-  </form>--->
-  <form action="{{ url_for('update_camp', camp_id=camp._id) }}" method="POST" id="editform" class="col-12 col-sm-10 col-md-8">
-    <div class="input-field col-12">
-      {{ form.csrf_token }}
-      <i class="material-icons prefix">terrain</i>
-      {{ form.camp_title.label }}
-      {{ form.camp_title }}
-      <ul>
-        {% for error in form.camp_title.errors %}
-        <li style="color:red;">{{ error }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="input-field col-12">
-      <i class="material-icons prefix">image</i>
-      {{ form.camp_img.label }}
-      {{ form.camp_img }}
-      <ul>
-        {% for error in form.camp_img.errors %}
-        <li style="color:red;">{{ error }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="input-field col-12">
-      <i class="material-icons prefix">flag</i>
-      {{ form.camp_state }}
-      {{ form.camp_state.label }}
-      <ul>
-        {% for error in form.camp_state.errors %}
-        <li style="color:red;">{{ error }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="input-field col-12">
-      <i class="material-icons prefix">location_on</i>
-      {{ form.camp_address.label }}
-      {{ form.camp_address }}
-      <ul>
-        {% for error in form.camp_address.errors %}
-        <li style="color:red;">{{ error }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="input-field col-12">
-      <i class="material-icons prefix">location_on</i>
-      {{ form.camp_availability }}
-      {{ form.camp_availability.label }}
-      <ul>
-        {% for error in form.camp_availability.errors %}
-        <li style="color:red;">{{ error }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="input-field col-12">
-      <i class="material-icons prefix">subject</i>
-      {{ form.camp_description.label }}
-      {{ form.camp_description }}
-      <ul>
-        {% for error in form.camp_description.errors %}
-        <li style="color:red;">{{ error }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    <p>
-      <label for="">
-      {{ form.camp_featured }}
-      <span>Featured</span>
-      </label>
-    </p>
-    <button class="btn waves-effect waves-light red" type="submit" name="action">Edit camp
-      <i class="material-icons right">send</i>
-    </button>
   </form>
   <div class="hidden-xs col-sm-1 col-md-2"></div>
 </div>
