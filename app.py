@@ -5,13 +5,14 @@ from bson.objectid import ObjectId
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, TextField, IntegerField, DateField, BooleanField
 from wtforms.validators import InputRequired, Length, AnyOf
+from os import path
+if path.exists('env.py'):
+    import env
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'milestone_project_3'
-app.config["MONGO_URI"] = 'mongodb+srv://daryl:chicken333!@cluster0-zqj1t.mongodb.net/milestone_project_3?retryWrites=true&w=majority'
-app.config["SECRET_KEY"] = 'thisisasecret'
-
+app.config["MONGO_DBNAME"] = os.environ.get('MONGO_DBNAME')
+app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)
 
