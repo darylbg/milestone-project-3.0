@@ -43,27 +43,31 @@
           </div>
         </div>
         <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">{{camp.camp_title}}<i class="material-icons right">close</i></span>
+          <span class="card-title card-reveal-header">{{camp.camp_title}}<i class="material-icons right">close</i></span>
           <div class="">
             <div class="card-location card-reveal-item">
-              <div><i class="material-icons prefix">flag</i></div>
+              <div class="card-reveal-title"><p>State location</p></div>
               <div class="card-reveal-input">{{camp.camp_state}}</div>
             </div>
             <div class="card-state card-reveal-item">
-              <div><i class="material-icons prefix">location_on</i></div>
+              <div class="card-reveal-title"><p>camp address</p></div>
               <div class="card-reveal-input">{{camp.camp_address}}</div>
             </div>
             <div class="card-arrive-by card-reveal-item">
-              <div><i class="material-icons prefix">event_available</i></div>
+              <div class="card-reveal-title"><p>Availability</p></div>
               <div class="card-reveal-input">{{camp.camp_availability}}</div>
             </div>
             <div class="card-facilities card-reveal-item">
-              <div><i class="material-icons prefix">group</i></div>
+              <div class="card-reveal-title"><p>Camp capacity </p></div>
               <div class="card-reveal-input">{{camp.camp_capacity}}</div>
             </div>
             <div class="card-facilities card-reveal-item">
-              <div><i class="material-icons prefix">subject</i></div>
+              <div class="card-reveal-title"><p>Description</p></div>
               <div class="card-reveal-input">{{camp.camp_description}}</div>
+            </div>
+            <div class="card-facilities card-reveal-item">
+              <div class="card-reveal-title"><p>Cost per night</p></div>
+              <div class="card-reveal-input">${{camp.camp_price}}</div>
             </div>
           </div>
         </div>

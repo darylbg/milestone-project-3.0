@@ -1,0 +1,45 @@
+
+
+  <ul class="edit-cards-ul">
+
+    <li>
+      <div class="card edit-card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="https://inteng-storage.s3.amazonaws.com/img/iea/MRw4y5ABO1/sizes/camping-tech-trends_resize_md.jpg">
+
+          <img class="activator" src="{{camp.camp_img}}">
+
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4 flow-text"><i class="material-icons right">more_vert</i></span>
+          <p class="red-text" style="display: inline-block"><a href="{{url_for('apply_form')}}">Take me there</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+          <div class="">
+            <div class="card-location card-reveal-item">
+              <div><i class="material-icons prefix">flag</i></div>
+              <div class="card-reveal-input"></div>
+            </div>
+            <div class="card-state card-reveal-item">
+              <div><i class="material-icons prefix">location_on</i></div>
+              <div class="card-reveal-input"></div>
+            </div>
+            <div class="card-arrive-by card-reveal-item">
+              <div><i class="material-icons prefix">event_available</i></div>
+              <div class="card-reveal-input"></div>
+            </div>
+            <div class="card-facilities card-reveal-item">
+              <div><i class="material-icons prefix">group</i></div>
+              <div class="card-reveal-input"></div>
+            </div>
+            <div class="card-facilities card-reveal-item">
+              <div><i class="material-icons prefix">subject</i></div>
+              <div class="card-reveal-input"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+  </ul>

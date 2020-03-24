@@ -9,7 +9,7 @@ from wtforms.validators import InputRequired, Length, AnyOf
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'milestone_project_3'
-app.config["MONGO_URI"] = 'mongodb+srv://daryl:puertorico123@cluster0-zqj1t.mongodb.net/milestone_project_3?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = 'mongodb+srv://daryl:chicken333!@cluster0-zqj1t.mongodb.net/milestone_project_3?retryWrites=true&w=majority'
 app.config["SECRET_KEY"] = 'thisisasecret'
 
 
@@ -51,7 +51,9 @@ def update_camp(camp_id):
         'camp_availability': request.form.get('camp_availability'),
         'camp_description':request.form.get('camp_description'),
         'camp_featured':request.form.get('camp_featured'),
-        'camp_img':request.form.get('camp_img')
+        'camp_capacity':request.form.get('camp_capacity'),
+        'camp_img':request.form.get('camp_img'),
+        'camp_price':request.form.get('camp_price')
     })
 
     return redirect(url_for('get_camps'))
@@ -82,7 +84,10 @@ def apply_form():
 def submit_success():
     return render_template('submitsuccessfull.html')
 
+SECRET = os.environ.get('mongodb_pass', 'my-default-secret-key')
+print(SECRET)
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
-            port=(os.environ.get('PORT')),
+            port=os.environ.get('PORT'),
             debug=True)

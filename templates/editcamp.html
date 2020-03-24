@@ -31,7 +31,7 @@
       <div class="input-field col-12">
         <i class="material-icons prefix">flag</i>
         <select id="camp_state" name="camp_state" class="validate" required>
-          <option value="" disabled selected>{{camp.camp_state}}</option>
+          <option value="{{camp.camp_state}}" disabled selected>{{camp.camp_state}}</option>
           <option value="Alabama">Alabama</option>
           <option value="Alaska">Alaska</option>
           <option value="Arizona">Arizona</option>
@@ -93,8 +93,8 @@
       <div class="input-field col-12">
         <i class="material-icons prefix">event_available</i>
         <select id="camp_availability" name="camp_availability" class="validate" required>
-          <option value="" disabled selected>{{camp.camp_availability}}</option>
-          <option value="location_on">Currently available</option>
+          <option value="{{camp.camp_availability}}" disabled selected>{{camp.camp_availability}}</option>
+          <option value="Currently available">Currently available</option>
           <option value="Available soon enquire futher">Available soon enquire futher</option>
           <option value="Currently unavailable">Currently unavailable</option>
         </select>
@@ -103,12 +103,19 @@
       <div class="input-field col-12">
         <i class="material-icons prefix">group</i>
         <select id="camp_capacity" name="camp_capacity" class="validate" required>
-          <option value="" disabled selected>{{camp.camp_capacity}}</option>
+          <option value="{{camp.camp_capacity}}" disabled selected>{{camp.camp_capacity}}</option>
           <option value="2 or less">2 or less</option>
           <option value="Group up to 5">Group up to 5</option>
           <option value="Group up to 10">Group up to 10</option>
         </select>
         <label for="camp_capacity" style="padding-left: 14px">Select capacity</label>
+      </div>
+      <div class="input-field col-12">
+        <i class="material-icons prefix">attach_money</i>
+        <p class="range-field" style="margin-left: 45px">
+          <label style="padding-left: 0px !important;">Set cost per night (in us dollars)</label>
+          <input type="range" id="test5 camp_price" name="camp_price" min="0" max="100"/>
+        </p>
       </div>
       <div class="input-field col-12">
         <i class="material-icons prefix">subject</i>
@@ -118,9 +125,9 @@
       <div class="container-fluid" style="margin-bottom: 35px;">
         <label>
           {% if camp.camp_featured %}
-            <input type="checkbox" id="camp_featured" name="camp_featured" checked/>
+          <input type="checkbox" id="camp_featured" name="camp_featured" checked />
           {% else %}
-            <input type="checkbox" id="camp_featured" name="camp_featured" />
+          <input type="checkbox" id="camp_featured" name="camp_featured" />
           {% endif %}
           <span>Featured</span>
         </label>
