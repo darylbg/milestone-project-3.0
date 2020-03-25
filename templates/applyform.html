@@ -11,14 +11,8 @@
 </div>
 
 <div class="row">
-<div class="col-12 col-md-6">
-
-  </div>
-</div>
-
-
-
-  <form method="POST" action="{{ url_for('apply_form') }}" class="col-12 col-md-6" id="applyform">
+  <div class="hidden-xs col-sm-1 col-md-2"></div>
+  <form method="POST" action="{{ url_for('apply_form') }}" class="col-12 col-sm-10 col-md-8" id="applyform">
     <div class="">
       {{ form.csrf_token }}
       {{ form.first_name.label }}
@@ -80,6 +74,7 @@
       </button>
     </div>
   </form>
+  <div class="hidden-xs col-sm-1 col-md-2"></div>
 </div>
 
 {% endblock %}
