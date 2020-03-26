@@ -6,6 +6,7 @@
   <div class="col-12 col-lg-8 camp-display-info">
     <h3 class="camp-display-title">Edit a camp listing here.</h3>
     <h4><strong>Update the campsite information, layout and price</strong></h4>
+    <h6>For images either paste in a img web url or leave it blank and a default image will be added</h6>
   </div>
   <div class="col-hidden col-lg-2"></div>
 </div>
@@ -22,9 +23,9 @@
       <div class="input-field col-12">
         <i class="material-icons prefix">image</i>
         {% if camp.camp_img == "" %}
-        <input id="camp_img" name="camp_img" type="text" class="validate" value="https://inteng-storage.s3.amazonaws.com/img/iea/MRw4y5ABO1/sizes/camping-tech-trends_resize_md.jpg" required>
+        <input id="camp_img" name="camp_img" type="text" class="validate" value="https://inteng-storage.s3.amazonaws.com/img/iea/MRw4y5ABO1/sizes/camping-tech-trends_resize_md.jpg">
         {% else %}
-        <input id="camp_img" name="camp_img" type="text" class="validate" value="{{camp.camp_img}}" required>
+        <input id="camp_img" name="camp_img" type="text" class="validate" value="{{camp.camp_img}}">
         {% endif %}
         <label for="camp_img" style="padding-left: 14px">Camp img</label>
       </div>
